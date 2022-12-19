@@ -3,7 +3,7 @@
 ## It will download the debootstrap files to local /usr/local/bin not /tmp
 ## The file for install is test4 and is written to ~/Downloads/test4
 ## This is not compatible with crouton shell scripts and the new files need to be copied to you /usr/local/bin is using this ie chroots/bin/ cp * /usr/local/bin
-## After make all use the ctrl+alt+shift+<- keys to get back to a crosh shell, start and new shell and shell into it. the command of sudo cp ~/Downloads/test4 /usr/local/bin then sudo chmod 755 /usr/local/bin/test4
+## After make all use the ctrl+alt+shift+<- keys to get back to a crosh shell, start and new shell and shell into it. the command of sudo cp ~/Downloads/test4 /usr/local/bin then sudo chmod 755 /usr/local/bin/test4 or install -Dt /usr/local/bin -m 755 ~/Downloads/test4
 ## then the sudo test4 --help will show the cmds to get chroot installed
 ## IE sudo test4 -p /home/SD/z/ -r bullseye -t xorg,xiwi,xfce will work 
 
