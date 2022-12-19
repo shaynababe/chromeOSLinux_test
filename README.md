@@ -1,9 +1,10 @@
-```bash
+
 ##With this release test4 is namespace for chromeOSLinux for task and builds in  /usr/local/bin for your local machine you need to have read write to run make all
 if will download the debootstrap files to local /usr/local/bin not /tmp
 The file for install is test4 and is written to ~/Downloads/test4
 This is not compatable with crouton shell script and the new file need to be copied to you /usr/local/bin is using this ie chroots/bin/ cp * /usr/local/bin
 
+```bash
 
 (bull3)z@localhost:~/crouton_Penguin/chromeOSLinux_test$ git push --all
 Username for 'https://github.com': shaynababe
