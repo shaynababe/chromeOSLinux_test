@@ -1,0 +1,44 @@
+HOWTO MAKE CHROOTS OF DISTROS
+
+
+########
+Gentoo:
+########
+wget http://uri/to/stage-tarball.tar.bz2
+tar pxf stage-tarball.tar.bz2 -C /path/to/gentoo/chroot/
+chroot /path/to/gentoo/chroot/
+
+http://www.gentoo.org/main/en/where.xml
+
+
+########
+Debian:
+########
+emerge debootstrap
+debootstrap wheezy /path/to/debian/chroot/
+chroot /path/to/debian/chroot/
+
+notes:
+ - replace "wheezy" with whatever release you want
+
+https://wiki.debian.org/DebianReleases
+
+
+########
+Fedora:
+########
+emerge yum
+cd /path/to/fedora/chroot/
+mkdir -p etc/yum/repos.d
+cat <<-EOF > etc/yum/repos.d/fedora.repo
+	[everything]
+	name=Fedora
+	baseurl=http://download.fedoraproject.org/pub/fedora/linux/releases/21/Everything/\$basearch/os/
+	enabled=1
+EOF
+yum --installroot=/path/to/fedora/chroot/ groupinstall Core
+chroot /path/to/fedora/chroot/
+
+notes:
+ - replace "21" in the baseurl with desired version
+ - for a more "full" install, use "Base" rather than "Core"

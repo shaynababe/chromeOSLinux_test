@@ -1,0 +1,14 @@
+#!/bin/bash -e
+# Copyright (c) 2022 The chromeOSLinux Authors. All rights reserved.
+# Use of this source code is governed by a BSD-style license that can be
+# found in the LICENSE file.
+REQUIRES='xorg'
+DESCRIPTION='Libreoffice.'
+HOSTBIN='startcli'
+CHROOTBIN='chromeOSLinuxpowerd'
+. "${TARGETSDIR:="$PWD"}/common"
+
+### Append to prepare.sh:
+install libreoffice cups-bsd imagemagick gimp jupyter
+
+
