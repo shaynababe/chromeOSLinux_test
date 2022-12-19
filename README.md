@@ -3,8 +3,27 @@
 ## It will download the debootstrap files to local /usr/local/bin not /tmp
 ## The file for install is test4 and is written to ~/Downloads/test4
 ## This is not compatible with crouton shell scripts and the new file need to be copied to you /usr/local/bin is using this ie chroots/bin/ cp * /usr/local/bin
+## After make all use the ctrl+alt+shift+<- keys to get back to a crosh shell, start and new shell and shell into it. the command of sudo cp ~/Downloads/test4 /usr/local/bin then sudo chmod 755 /usr/local/bin/test4
+## then the sudo test4 --help will show the cmds to get chroot installed
+## IE sudo test4 -p /home/SD/z/ -r bullseye -t xorg,xiwi,xfce will work 
+
+## if you with to view the activity start and  new shell and cd /usr/local/bin
+## you can ls -la to watch the intall process 
 
 ```bash
+
+chronos@localhost /home/SD/3 $ ls /usr/local/bin
+crash_reporter_wrapper    enter-chroot  mount-chroot  startkde    startxbmc   testar1
+delete-chroot             host-bin      startcli      startkodi   startxfce4  unmount-chroot
+drinkcat-chroagh-18cc180  hostbin.ar    starte17      startlxde   startxiwi   unmount-chroot.old
+edit-chroot               mnt.sh        startgnome    startunity  test4
+chronos@localhost /home/SD/3 $ ls
+bin  chroots
+chronos@localhost /home/SD/3 $ cd chroots
+chronos@localhost /home/SD/3/chroots $ ls
+bull3
+chronos@localhost /home/SD/3/chroots $ 
+
 drwxr-xr-x.  2 z z  4096 Dec 19 12:03 .
 drwxr-xr-x. 13 z z  4096 Dec 19 12:15 ..
 -rwxr-xr-x.  1 z z  7360 Nov 25 01:46 crash_reporter_wrapper
