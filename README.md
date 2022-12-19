@@ -2,7 +2,26 @@
 ## With this release test4 is namespace for chromeOSLinux for task and builds in  /usr/local/bin for your local machine you need to have read write to run make all
 ## It will download the debootstrap files to local /usr/local/bin not /tmp
 ## The file for install is test4 and is written to ~/Downloads/test4
-## This is not compatible with crouton shell script and the new file need to be copied to you /usr/local/bin is using this ie chroots/bin/ cp * /usr/local/bin
+## This is not compatible with crouton shell scripts and the new file need to be copied to you /usr/local/bin is using this ie chroots/bin/ cp * /usr/local/bin
+
+drwxr-xr-x.  2 z z  4096 Dec 19 12:03 .
+drwxr-xr-x. 13 z z  4096 Dec 19 12:15 ..
+-rwxr-xr-x.  1 z z  7360 Nov 25 01:46 crash_reporter_wrapper
+lrwxrwxrwx.  1 z z    11 Dec 19 12:03 delete-chroot -> edit-chroot
+-rwxr-xr-x.  1 z z 24256 Nov 25 01:46 edit-chroot
+-rwxr-xr-x.  1 z z 27254 Nov 25 01:46 enter-chroot
+-rwxr-xr-x.  1 z z 13503 Nov 25 01:46 mount-chroot
+-rwxr-xr-x.  1 z z   735 Nov 25 01:46 startcli
+-rwxr-xr-x.  1 z z   569 Nov 25 01:46 starte17
+-rwxr-xr-x.  1 z z   548 Nov 25 01:46 startgnome
+-rwxr-xr-x.  1 z z   557 Nov 25 01:46 startkde
+-rwxr-xr-x.  1 z z   592 Nov 25 01:46 startkodi
+-rwxr-xr-x.  1 z z   561 Nov 25 01:46 startlxde
+-rwxr-xr-x.  1 z z   548 Nov 25 01:46 startunity
+-rwxr-xr-x.  1 z z   547 Nov 25 01:46 startxfce4
+-rwxr-xr-x.  1 z z  2140 Nov 25 01:46 startxiwi
+-rwxr-xr-x.  1 z z 10790 Nov 25 01:46 unmount-chroot
+
 
 ```bash
 
