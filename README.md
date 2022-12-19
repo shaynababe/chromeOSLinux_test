@@ -13,6 +13,73 @@
 ![Screenshot_2022-12-19_13-48-13](https://user-images.githubusercontent.com/120763310/208530702-a211e371-ba0f-4329-b5d7-433041ba63ad.png)
 
 ```bash
+chronos@localhost /usr/local/bin $ sudo test4 
+test4 [options] -t targets
+test4 [options] -f backup_tarball
+test4 [options] -d -f bootstrap_tarball
+
+
+Constructs a chroot for running a more standard userspace alongside Chromium OS.
+
+If run with -f, where the tarball is a backup previously made using edit-chroot,
+the chroot is restored and relevant scripts installed.
+
+If run with -d, a bootstrap tarball is created to speed up chroot creation in
+the future. You can use bootstrap tarballs generated this way by passing them
+to -f the next time you create a chroot with the same architecture and release.
+
+test4 must be run as root unless -d is specified AND fakeroot is
+installed AND /tmp is mounted exec and dev.
+
+It is highly recommended to run this from a crosh shell (Ctrl+Alt+T), not VT2.
+
+Options:
+    -a ARCH     The architecture to prepare a new chroot or bootstrap for.
+                Default: autodetected for the current chroot or system.
+    -b          Restore chromeOSLinux scripts in PREFIX/bin, as required by the
+                chroots currently installed in PREFIX/chroots.
+    -d          Downloads the bootstrap tarball but does not prepare the chroot.
+    -e          Encrypt the chroot with ecryptfs using a passphrase.
+                If specified twice, prompt to change the encryption passphrase.
+    -f TARBALL  The bootstrap or backup tarball to use, or to download to (-d).
+                When using an existing tarball, -a and -r are ignored.
+    -k KEYFILE  File or directory to store the (encrypted) encryption keys in.
+                If unspecified, the keys will be stored in the chroot if doing a
+                first encryption, or auto-detected on existing chroots.
+    -m MIRROR   Mirror to use for bootstrapping and package installation.
+                Default depends on the release chosen.
+                Can only be specified during chroot creation and forced updates
+                (-u -u). After installation, the mirror can be modified using
+                the distribution's recommended way.
+    -M MIRROR2  A secondary mirror, often used for security updates.
+                Can only be specified alongside -m.
+    -n NAME     Name of the chroot. Default is the release name.
+                Cannot contain any slash (/).
+    -p PREFIX   The root directory in which to install the bin and chroot
+                subdirectories and data.
+                Default: /usr/local/, with /usr/local//chroots linked to
+                /mnt/stateful_partition/chromeOSLinux/chroots.
+    -P PROXY    Set an HTTP proxy for the chroot; effectively sets http_proxy.
+                Specify an empty string to remove a proxy when updating.
+    -r RELEASE  Name of the distribution release. Default: focal,
+                or auto-detected if upgrading a chroot and -n is specified.
+                Specify 'help' or 'list' to print out recognized releases.
+    -t TARGETS  Comma-separated list of environment targets to install.
+                Specify 'help' or 'list' to print out potential targets.
+    -T TARGETFILE  Path to a custom target definition file that gets applied to
+                the chroot as if it were a target in the test4 bundle.
+    -u          If the chroot exists, runs the preparation step again.
+                You can use this to install new targets or update old ones.
+                Passing this parameter twice will force an update even if the
+                specified release does not match the one already installed.
+    -V          Prints the version of the installer to stdout.
+
+Be aware that dev mode is inherently insecure, even if you have a strong
+password in your chroot! Anyone can simply switch VTs and gain root access
+unless you've permanently assigned a Chromium OS root password. Encrypted
+chroots require you to set a Chromium OS root password, but are still only as
+secure as the passphrases you assign to them.
+
 
 chronos@localhost /home/SD/3 $ ls /usr/local/bin
 crash_reporter_wrapper    enter-chroot  mount-chroot  startkde    startxbmc   testar1
