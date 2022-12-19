@@ -4,6 +4,7 @@
 ## The file for install is test4 and is written to ~/Downloads/test4
 ## This is not compatible with crouton shell scripts and the new file need to be copied to you /usr/local/bin is using this ie chroots/bin/ cp * /usr/local/bin
 
+```bash
 drwxr-xr-x.  2 z z  4096 Dec 19 12:03 .
 drwxr-xr-x. 13 z z  4096 Dec 19 12:15 ..
 -rwxr-xr-x.  1 z z  7360 Nov 25 01:46 crash_reporter_wrapper
@@ -21,9 +22,6 @@ lrwxrwxrwx.  1 z z    11 Dec 19 12:03 delete-chroot -> edit-chroot
 -rwxr-xr-x.  1 z z   547 Nov 25 01:46 startxfce4
 -rwxr-xr-x.  1 z z  2140 Nov 25 01:46 startxiwi
 -rwxr-xr-x.  1 z z 10790 Nov 25 01:46 unmount-chroot
-
-
-```bash
 
 (bull3)z@localhost:~/crouton_Penguin/chromeOSLinux_test$ git push --all
 Username for 'https://github.com': shaynababe
