@@ -3,6 +3,9 @@
 
 ## For those people you wish to skip the build process just down load test4 and run it
 ## https://drive.google.com/uc?export=download&id=1Q2DRQCsDKsBA_0t4anFKRN9Pl61d6Rkt
+# chronos@localhost ~ $ sudo test4 -V
+# test4: version 1-20221219121458~main:56a040a8
+# chronos@localhost ~ $ 
 ## I have not decide on a release default yet Focal maybe bullseye is also being considered
 # test4 -p /home/SD/z/ -r bullseye -t xorg,xiwi,xfce -n bull
 
