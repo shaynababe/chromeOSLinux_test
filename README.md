@@ -4,7 +4,7 @@
 ## For those people you wish to skip the build process just down load test4 and run it
 ## https://drive.google.com/uc?export=download&id=1Q2DRQCsDKsBA_0t4anFKRN9Pl61d6Rkt
 ## I have not decide on a release default yet Focal maybe bullseye is also being considered
-### test4 -p /home/SD/z/ -r bullseye -t xorg,xiwi,xfce -n bull
+# test4 -p /home/SD/z/ -r bullseye -t xorg,xiwi,xfce -n bull
 
 ## With this release test4 is namespaced for chromeOSLinux for task and builds in  /usr/local/bin for your local machine you need to have read write to run make all
 ## It will download the debootstrap files to local /usr/local/bin not /tmp
