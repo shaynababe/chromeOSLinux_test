@@ -148,17 +148,17 @@ rm -rf chromeOSLinux.build && mkdir -p chromeOSLinux.build \
 	tmp=chromeOSLinux.build sh -e "$bootstrap" \
 		|| ! rm -rf chromeOSLinux.build || exit 1; \
 done
-Preparing bootstrap dependencies for installer/ubuntu/bootstrap
+Preparing bootstrap dependencies for installer/ubuntu/bootstrap ### Thus is where test4 doownload debootstrap to local chroot /usr/local/bin in the development compile
 ######################################################################### 100.0%
-Patching debootstrap...
+Patching debootstrap... # Test4 patches debootstrap to use curl for some activities because Chosh does not use apt-get but curl works
 { \
 	sed -e "s/\$TARPARAMS/-j/" \
-		-e "s/VERSION=.*/VERSION='1-20221219121458~main:56a040a8'/" \
+		-e "s/VERSION=.*/VERSION='1-20221219121458~main:56a040a8'/" \ # it sets a version for the build
 		build/wrapper.sh \
-	&& (cd chromeOSLinux.build && tar --owner=root --group=root -c -j *)\
+	&& (cd chromeOSLinux.build && tar --owner=root --group=root -c -j *)\ assign root and owner and group 
 	&& chmod +x /dev/stdout \
-;} > ~/Downloads/test4 || ! rm -f ~/Downloads/test4
-gcc -g -Wall -Werror -Wno-error=unused-function -Os src/fbserver.c -lX11 -lXdamage -lXext -lXfixes -lXtst -o chromeOSLinuxfbserver
+;} > ~/Downloads/test4 || ! rm -f ~/Downloads/test4 # set output image
+gcc -g -Wall -Werror -Wno-error=unused-function -Os src/fbserver.c -lX11 -lXdamage -lXext -lXfixes -lXtst -o chromeOSLinuxfbserver # write the system tasks
 gcc -g -Wall -Werror -Wno-error=unused-function -Os src/findnacld.c  -o chromeOSLinuxfindnacld
 In file included from src/findnacld.c:5:
 src/websocket.h:905:13: warning: 'socket_server_init' defined but not used [-Wunused-function]
@@ -173,6 +173,9 @@ gcc -g -Wall -Werror -Wno-error=unused-function -Os src/xi2event.c -lX11 -lXi -o
 gcc -g -Wall -Werror -Wno-error=unused-function -Os -shared -fPIC src/freon.c -ldl -ldrm -I/usr/include/libdrm -o chromeOSLinuxfreon.so
 #rm -f chromeOSLinux.zip && zip -q --junk-paths chromeOSLinux.zip 
 
+## the compile is complete, it runs from /usr/local/bin to install a chroot not /tmp tmpfs and ramfs, this is in swap space and complies with chromeOS security constraints
+##
+The build tree data structure after compile
 |-- AUTHORS
 |-- Makefile
 |-- README.md
