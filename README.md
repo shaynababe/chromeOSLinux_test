@@ -8,7 +8,7 @@
 ## IE sudo test4 -p /home/SD/z/ -r bullseye -t xorg,xiwi,xfce -n bull #will work 
 
 ## if you wish to view the activity start a new shell and cd /usr/local/bin
-## you can ls -la to watch the intall process 
+## you can ls -la to watch the install process 
 
 ![Screenshot_2022-12-19_13-48-13](https://user-images.githubusercontent.com/120763310/208530702-a211e371-ba0f-4329-b5d7-433041ba63ad.png)
 
