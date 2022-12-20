@@ -10,8 +10,10 @@
 # test4 -p /home/SD/z/ -r bullseye -t xorg,xiwi,xfce -n bull
 
 ## With this release test4 is namespaced for chromeOSLinux for task and builds in  /usr/local/bin for your local machine you need to have read write to run make all, in you test4 chroot cmd
+# git clone https://github.com/shaynababe/chromeOSLinux_test
 # sudo chmod 777 /usr/local/bin 
 # then test4 will compile just fine
+# make all
 ## It will download the debootstrap files to local /usr/local/bin not /tmp
 ## The file for install is test4 and is written to ~/Downloads/test4
 ## This is not compatible with crouton shell scripts and the new files need to be copied to you /usr/local/bin is using this ie chroots/bin/ cp * /usr/local/bin
