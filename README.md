@@ -1,6 +1,6 @@
 ![](https://github.com/user/banner.png) 
 ![banner](https://user-images.githubusercontent.com/120763310/208612080-3d83f547-7416-4276-8927-8e5535b8031d.png)
-# This is not compatible with crouton shell scripts and the new files need to be copied to you /usr/local/bin is using this ie chroots/bin/ cp * /usr/local/bin
+# This is not compatible with crouton shell scripts and the new files need to be copied to you /usr/local/bin is using this ie .../bin/chroots cp ./bin/* /usr/local/bin
 ## For those people you wish to skip the build process just down load test4 and run it
 ## https://drive.google.com/uc?export=download&id=1Q2DRQCsDKsBA_0t4anFKRN9Pl61d6Rkt
 # chronos@localhost ~ $ sudo test4 -V
