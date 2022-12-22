@@ -128,7 +128,8 @@ lrwxrwxrwx.  1 z z    11 Dec 19 12:03 delete-chroot -> edit-chroot
 Username for 'https://github.com': shaynababe
 Password for 'https://shaynababe@github.com': 
 remote: Support for password authentication was removed on August 13, 2021.
-remote: Please see https://docs.github.com/en/get-started/getting-started-with-git/about-remote-repositories#cloning-with-https-urls for information on currently recommended modes of authentication.
+remote: Please see https://docs.github.com/en/get-started/getting-started-with-git/about-remote-repositories
+#cloning-with-https-urls for information on currently recommended modes of authentication.
 fatal: Authentication failed for 'https://github.com/shynababe/chromeOSLinux_test.git/'
 (bull3)z@localhost:~/crouton_Penguin/chromeOSLinux_test$ git push --all
 Username for 'https://github.com': shaynababe
@@ -160,7 +161,8 @@ README.md  chroot-bin                          host-bin     kernel
 	tmp=chromeOSLinux.build sh -e "$bootstrap" \
 		|| ! rm -rf chromeOSLinux.build || exit 1; \
 done
-Preparing bootstrap dependencies for installer/ubuntu/bootstrap ### Thus is where test4 doownload debootstrap to local chroot /usr/local/bin in the development compile
+Preparing bootstrap dependencies for installer/ubuntu/bootstrap 
+### Thus is where test4 download debootstrap to local chroot /usr/local/bin in the development compile
 ######################################################################### 100.0%
 Patching debootstrap... # Test4 patches debootstrap to use curl for some activities because Chosh does not use apt-get but curl works
 { \
