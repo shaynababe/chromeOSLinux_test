@@ -3,6 +3,8 @@
 # This is not compatible with crouton shell scripts and the new files need to be copied to you /usr/local/bin is using this ie .../bin/chroots cp ./bin/* /usr/local/bin
 ## For those people you wish to skip the build process just down load test4 and run it
 ## https://drive.google.com/uc?export=download&id=1Q2DRQCsDKsBA_0t4anFKRN9Pl61d6Rkt
+# to assist in the mouns being .exec and open please download https://drive.google.com/file/d/1okABZugr72CQTaVQfK3v1VikszTUNFq2/view?usp=sharing
+The is mnt.sh same instal cp mnt.sh /usr/local/bin, sudo chmod 755 /usr/local/bin/mnt.sh or install -Dt /usr/local/bin -m 755 ~/Downloads/mnt.sh
 # chronos@localhost ~ $ sudo test4 -V
 # test4: version 1-20221219121458~main:56a040a8
 # chronos@localhost ~ $ 
