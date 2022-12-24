@@ -9,4 +9,4 @@ cp croutonpowerd chromeOSLinuxpowerd
 cp croutonxinitrc-wrapper chromeOSLinuxxinitrc-wrapper
 cp croutoncycle chromeOSLinuxcycle
 cp croutontriggerd chromeOSLinuxtriggerd
-
+cp croutonurlhandler chromeOSLinuxurlhandler
