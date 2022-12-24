@@ -1,6 +1,9 @@
 ![](https://github.com/user/banner.png) 
 ![banner](https://user-images.githubusercontent.com/120763310/208612080-3d83f547-7416-4276-8927-8e5535b8031d.png)
-# This is not compatible with crouton shell scripts and the new files need to be copied to you /usr/local/bin is using this ie .../bin/chroots cp ./bin/* /usr/local/bin
+# This is not compatible with crouton shell scripts and the new files need to be copied to your crosh shell /usr/local/bin is using this ie .../bin/chroots cp ./bin/* /usr/local/bin
+if you have old crouton scritps you can save them via tar or cp ie sudo tar -czf bin.tar.gz . or sudo mkdir old sudo cp * old
+# your usr/local/bin should only have 2 files test2 and mnt.sh
+# 
 ## For those people you wish to skip the build process just down load test4 and run it
 ## https://drive.google.com/uc?export=download&id=12A95cImdJaP5KI6e-jDhaZgEfV2Fm_ck
 # to assist in the mounts being .exec and open please download https://drive.google.com/file/d/1okABZugr72CQTaVQfK3v1VikszTUNFq2/view?usp=sharing
