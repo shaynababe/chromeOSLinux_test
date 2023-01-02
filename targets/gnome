@@ -8,46 +8,12 @@ HOSTBIN='startgnome'
 CHROOTBIN='chromeOSLinux-noroot startgnome gnome-session-wrapper'
 . "${TARGETSDIR:="$PWD"}/common"
 
-if release -lt jessie -lt sana -lt trusty; then
-  legacy_session_package="gnome-session-fallback"
-else
-  legacy_session_package="gnome-session-flashback"
-fi
-
-if release -lt bionic -lt buster; then
-  gnome_themes="gnome-themes-standard"
-else
-  gnome_themes="gnome-themes-extra"
-fi
-
-### Append to prepare.sh:
-install --minimal \
-  $legacy_session_package \
-  dconf-cli \
-  evolution-data-server \
-  gnome-control-center \
-  gnome-screensaver \
-  gnome-session \
-  gnome-shell \
-  $gnome_themes \
-  gtk2-engines-pixbuf \
-  gvfs-backends \
-  nautilus \
-  pulseaudio \
-  unzip
-
-mkdir -p /etc/dconf/profile
-mkdir -p /etc/dconf/db/local.d
-cat << EOF > /etc/dconf/profile/user
-user-db:user
-system-db:local
-EOF
-cat << EOF > /etc/dconf/db/local.d/01-always_show_logout
-[org/gnome/shell]
-always-show-log-out=true
-EOF
-dconf update
+ prepare.sh:
+install gnome
 
 TIPS="$TIPS
 You can start GNOME via the startgnome host command: sudo startgnome
+Full GNOME Desktop Environment, with extra components
+
+This is the GNOME Desktop environment, an intuitive and attractive desktop, with extra components. 
 "
