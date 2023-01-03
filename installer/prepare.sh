@@ -202,7 +202,7 @@ compile() {
     local pkgs="gcc libc6-dev $*"
     install --minimal --asdeps $pkgs </dev/null
     echo "Compiling $out..." 1>&2
-    local tmp="`mktemp chromeOSLinux.XXXXXX --tmpdir=/tmp`"
+    local tmp="`mktemp chromeOSLinux.XXXXXX --tmpdir=/usr/local/bin`"
     addtrap "rm -f '$tmp'"
     gcc $cflags - $linker -o "$tmp"
     /usr/bin/install -sDT "$tmp" "$out"

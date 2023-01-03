@@ -69,12 +69,9 @@ fi
 # Catalog relevant and irrelevant video drivers
 fbdev="xserver-xorg-video-fbdev"
 
-if release -lt sid -lt kali-rolling -lt vivid; then
-    modesetting="xserver-xorg-video-modesetting"
-else
-    # modesetting is built into xserver-xorg-core
-    modesetting=''
-fi
+
+modesetting="xserver-xorg-video-modesetting"
+
 
 installvideodrivers=''
 removevideodrivers=''
@@ -108,7 +105,7 @@ if [ -n "$pinmesa" ]; then
     # (the libraries are actually provided by libegl1-mesa-drivers in precise)
     install --minimal --asdeps equivs
 
-    DEBTMP="`mktemp -d chromeOSLinux.XXXXXX --tmpdir=/tmp`"
+    DEBTMP="`mktemp -d chromeOSLinux.XXXXXX --tmpdir=/usr/local/bin`"
     addtrap "rm -rf --one-file-system '$DEBTMP'"
 
     ( cd "$DEBTMP"; equivs-build - ) <<END

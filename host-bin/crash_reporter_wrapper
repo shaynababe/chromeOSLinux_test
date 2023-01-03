@@ -16,7 +16,7 @@ CORE_PATTERN="|`readlink -f -- "$0"` $CORE_PATTERN_PARAMS"
 CORE_PATTERN_FILE='/var/run/crw/core_pattern'
 CORE_PATTERN_PROC='/proc/sys/kernel/core_pattern'
 DEFAULT_CHROOT_PATTERN=''
-IDEAL_LOCATION='/var/run/crw/crw'
+IDEAL_LOCATION='/usr/local/bin/run/crw/crw'
 
 USAGE="$APPLICATION register
 $APPLICATION $CORE_PATTERN_PARAMS
@@ -111,7 +111,7 @@ if [ "$#" = 1 ]; then
         if ! mountpoint "$dir" >/dev/null 2>/dev/null; then
             mkdir -p "$dir"
             mount -t tmpfs \
-                  -o 'rw,nosuid,nodev,exec,noatime,mode=700,size=128K' \
+                  -o 'rw,nosuid,nodev,exec,noatime,mode=755,size=128K' \
                   tmpfs "$dir"
         fi
         cp -fT "$0" "$IDEAL_LOCATION"

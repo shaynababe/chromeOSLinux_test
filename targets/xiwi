@@ -46,7 +46,7 @@ ln -sf /etc/chromeOSLinux/xorg-dummy.conf /etc/X11/
 # Download the latest xf86-video-dummy package
 urlbase="https://xorg.freedesktop.org/releases/individual/driver"
 
-DUMMYBUILDTMP="`mktemp -d chromeOSLinux-cras.XXXXXX --tmpdir=/tmp`"
+DUMMYBUILDTMP="`mktemp -d chromeOSLinux-cras.XXXXXX --tmpdir=/usr/local/bin`"
 
 addtrap "rm -rf --one-file-system '$DUMMYBUILDTMP'"
 

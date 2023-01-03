@@ -2,7 +2,7 @@
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
-TARGET = ~/Downloads/test4
+TARGET = ~/Downloads/test5
 EXTTARGET = chromeOSLinux.zip
 LIBS = src/freon.c
 LIBSTARGETS = $(patsubst src/%.c, chromeOSLinux%.so, $(LIBS))

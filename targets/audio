@@ -12,7 +12,7 @@ CHROOTETC='pulseaudio-default.pa'
 
 # Fetch CRAS source
 
-CRASBUILDTMP="`mktemp -d chromeOSLinux-cras.XXXXXX --tmpdir=/tmp`"
+CRASBUILDTMP="`mktemp -d chromeOSLinux-cras.XXXXXX --tmpdir=/usr/local/bin`"
 
 addtrap "rm -rf --one-file-system '$CRASBUILDTMP'"
 
