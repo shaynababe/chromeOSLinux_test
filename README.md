@@ -169,7 +169,7 @@ README.md  chroot-bin                          host-bin     kernel
 # (bull3)z@localhost:~/crouton_Penguin/chromeOSLinux_test$ make all, thus build test5process
 # rm -rf chromeOSLinux.build && mkdir -p chromeOSLinux.build \
 # && cp -at chromeOSLinux.build --parents 
-
+'''bash
 chroot-bin/brightness 
 chroot-bin/chromeOSLinux-noroot 
 chroot-bin/chromeOSLinux-unity-autostart 
@@ -324,6 +324,7 @@ targets/xbmc
 targets/xfce 
 targets/xfce-desktop 
 targets/xiwi targets/xorg \
+'''
 ## && for bootstrap in installer/arch/bootstrap installer/debian/bootstrap installer/gentoo/bootstrap installer/kali/bootstrap installer/opensuse/bootstrap installer/ubuntu/bootstrap; do \
 ```bash
 	tmp=chromeOSLinux.build; \
