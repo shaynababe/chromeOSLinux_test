@@ -2,17 +2,12 @@
 # Copyright (c) 2022 The chromeOSLinux Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
-REQUIRES='gtk-extra'
 DESCRIPTION='Installs the Xfce desktop environment.'
 HOSTBIN='startxfce4'
 CHROOTBIN='chromeOSLinux-noroot startxfce4'
 . "${TARGETSDIR:="$PWD"}/common"
 
-
-
-
 install xfce4 xfce4-goodies dbus-x11 gvfs*
 TIPS="$TIPS
 You can start Xfce via the startxfce4 host command: sudo startxfce4
- Xfce is a lightweight desktop environment for unix-like operating systems. It aims to be fast and lightweight, while still being visually appealing and easy to use. Designed for productivity, it loads and executes applications fast, while conserving system resources.This package is a metapackage; it depends on the core packages of the Xfce4 desktop environment and recommends some extra Xfce4 packages. If you intend to use Xfce4 and want the full experience then installing this package and the packages it Recommends is a great place to start.If you just want to pick and choose the core components then feel free to remove this package. Tags: System Administration: Configuration Tool, User Interface: Graphical User Interface, X Window System, Role: role::dummy, role::program, Scope: Utility, Application Suite: XFce, Interface Toolkit: uitoolkit::gtk, use::configuring, X Window System: Application
-"
+ 

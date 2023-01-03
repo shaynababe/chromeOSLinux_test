@@ -2,14 +2,13 @@
 # Copyright (c) 2022 The chromeOSLinux Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
-REQUIRES='gtk-extra'
-DESCRIPTION='Installs the GNOME desktop environment. (Approx. 400MB)'
+DESCRIPTION='Installs the GNOME desktop environment.'
 HOSTBIN='startgnome'
 CHROOTBIN='chromeOSLinux-noroot startgnome gnome-session-wrapper'
 . "${TARGETSDIR:="$PWD"}/common"
 
  prepare.sh:
-install gnome
+install gnome gnome-devel gnome-platform-devel
 
 TIPS="$TIPS
 You can start GNOME via the startgnome host command: sudo startgnome
