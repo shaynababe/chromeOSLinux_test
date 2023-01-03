@@ -5,7 +5,7 @@ test5 has update targets for enlighten WM e7 is now gone also gtk-extra has been
 if you have old crouton scritps you can save them via tar or cp ie sudo tar -czf bin.tar.gz . or sudo mkdir old sudo cp * old
 # your usr/local/bin should only have 2 files test5 and mnt.sh
 # 
-## For those people you wish to skip the build process just down load test4 and run it
+## For those people you wish to skip the build process just down load test5 and run it
 ## https://drive.google.com/uc?export=download&id=12A95cImdJaP5KI6e-jDhaZgEfV2Fm_ck
 # to assist in the mounts being .exec and open please download https://drive.google.com/file/d/1okABZugr72CQTaVQfK3v1VikszTUNFq2/view?usp=sharing
 The is mnt.sh same install cp mnt.sh /usr/local/bin, sudo chmod 755 /usr/local/bin/mnt.sh or install -Dt /usr/local/bin -m 755 ~/Downloads/mnt.sh
