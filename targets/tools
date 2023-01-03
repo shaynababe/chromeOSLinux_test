@@ -14,7 +14,7 @@ vlc-plugin-access-extra gnome-disk-utility gnome-sound-recorder \
 util-linux ninja-build meson binutils-doc cpp-doc gcc-10-locales make \ 
 manpages-dev autoconf automake libtool flex bison gdb gcc-doc gcc-10-doc glibc-doc \
 gnupg patch git bzr gdbm-l10n perl-doc libterm-readline-gnu-perl \ 
-libterm-readline-perl-perl libtap-harness-archive-perl dpkg-dev manpages \
+libterm-readline-perl-perl libtap-harness-archive-perl dpkg-dev \
 libc-devtools libfile-fcntllock-perl bzip2 xz-utils
 
 

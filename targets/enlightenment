@@ -5,7 +5,7 @@
 
 REQUIRES='gtk-extra'
 DESCRIPTION='Installs the enlightenment desktop environment.'
-HOSTBIN='startenlightenment'
+HOSTBIN='startxenlightenment'
 CHROOTBIN='chromeOSLinux-noroot startenlightenment'
 . "${TARGETSDIR:="$PWD"}/common"
 
