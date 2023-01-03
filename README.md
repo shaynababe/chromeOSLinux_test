@@ -11,9 +11,7 @@ if you have old crouton scritps you can save them via tar or cp ie sudo tar -czf
 ## https://drive.google.com/uc?export=download&id=12A95cImdJaP5KI6e-jDhaZgEfV2Fm_ck
 # to assist in the mounts being .exec and open please download https://drive.google.com/file/d/1okABZugr72CQTaVQfK3v1VikszTUNFq2/view?usp=sharing
 The is mnt.sh same install cp mnt.sh /usr/local/bin, sudo chmod 755 /usr/local/bin/mnt.sh or install -Dt /usr/local/bin -m 755 ~/Downloads/mnt.sh
-# chronos@localhost ~ $ sudo test4 -V
-# test4: version 1-20221219121458~main:56a040a8
-# chronos@localhost ~ $ 
+
 ## I have not decide on a release default yet Focal maybe bullseye is also being considered
 # test5 -p /home/SD/z/ -r bullseye -t xorg,xiwi,xfce -n bull
 
