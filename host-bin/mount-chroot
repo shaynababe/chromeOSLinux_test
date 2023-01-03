@@ -333,7 +333,7 @@ no   -- You don't want to decide one way or another quite yet.
     y*|Y*) (
         echo -n "Encrypting $NAME; please wait..." 1>&2
         cd "$movesrc"
-        tmp="`mktemp -d --tmpdir=. 'ECRYPTFS_MOVE_STAGING_XXXXXX'`"
+        tmp="`mktemp -d --tmpdir=/usr/local/tmp 'ECRYPTFS_MOVE_STAGING_XXXXXX'`"
         find -not -name 'ECRYPTFS_FNEK_ENCRYPTED*' \
              -not -wholename './ECRYPTFS_MOVE_STAGING_*' \
              -not -wholename '.' \

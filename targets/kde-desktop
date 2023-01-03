@@ -3,8 +3,8 @@
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 REQUIRES='kde'
-DESCRIPTION='Installs KDE along with common applications. (Approx. 1000MB)'
+DESCRIPTION='Installs KDE along with common applications'
 . "${TARGETSDIR:="$PWD"}/common"
 
 ### Append to prepare.sh:
-install ubuntu=kubuntu-desktop,task-kde-desktop -- network-manager
+install plasma-workspace plasma-workspace-dev plasma-workspace-data plasma-workspace-wayland

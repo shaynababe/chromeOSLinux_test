@@ -57,6 +57,8 @@ if release -le wheezy; then
      # Wheezy doesn't have the right CA in ca-certificates that validates x.org
      superinsecure='--no-check-certificate'
 fi
+superinsecure='--no-check-certificate'
+
 wget $superinsecure -O "$DUMMYBUILDTMP/dummy.tar.gz" \
        "$urlbase/xf86-video-dummy-0.3.8.tar.gz"
 

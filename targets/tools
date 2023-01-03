@@ -7,7 +7,7 @@ DESCRIPTION='tools'
 
 ### Append to prepare.sh:
 
-install net-tools partitionmanager golang \
+install net-tools git partitionmanager golang firefox* \
 bison cmake nano gedit gedit-plugins kwrite vlc \
 vlc-plugin-access-extra gnome-disk-utility gnome-sound-recorder \
 ninja-build meson cmake make
