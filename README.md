@@ -24,8 +24,6 @@
 =======
 
 ## I have not decide on a release default yet Focal maybe bullseye is also being considered
-# test5 -p /home/SD/z/ -r bullseye -t xorg,xiwi,xfce -n bull
-
 ## With this release test5 is namespaced for chromeOSLinux for task and builds in  /usr/local/bin for your local machine you need to have read write to run make all, in you test5 chroot cmd
 # git clone https://github.com/shaynababe/chromeOSLinux_test
 # sudo chmod 777 /usr/local/bin 
@@ -34,9 +32,12 @@
 ## It will download the debootstrap files to local /usr/local/bin not /tmp
 ## The file for install is test5 and is written to ~/Downloads/test5
 ## After make all use the ctrl+alt+shift+<- keys to get back to a crosh shell, start a new shell and shell into it. the command of sudo cp ~/Downloads/test5/usr/local/bin then sudo chmod 755 /usr/local/bin/test5or install -Dt /usr/local/bin -m 755 ~/Downloads/test5
-## then the sudo test5--help will show the cmds to get chroot installed
-## IE sudo test5-p /home/SD/z/ -r bullseye -t xorg,xiwi,xfce -n bull #will work 
 
+## then the sudo test5--help will show the cmds to get chroot installed
+
+## IE sudo test5-p /home/SD/z/ -r bullseye -t xorg,xiwi,xfce -n bull 
+
+#will work 
 ## if you wish to view the activity start a new shell and cd /usr/local/bin
 ## you can ls -la to watch the install process 
 
