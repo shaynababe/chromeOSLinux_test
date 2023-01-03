@@ -7,7 +7,7 @@ HOSTBIN='startlxde'
 CHROOTBIN='chromeOSLinux-noroot startlxde'
 . "${TARGETSDIR:="$PWD"}/common"
 ### Append to prepare.sh:
-install LXDE
+install lxde
 TIPS="$TIPS
 You can start LXDE via the startlxde host command: sudo startlxde
 "
