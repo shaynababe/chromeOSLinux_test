@@ -1,0 +1,206 @@
+#!/bin/bash -e
+# Copyright (c) 2022 The chromeOSLinux Authors. All rights reserved.
+# Use of this source code is governed by a BSD-style license that can be
+# found in the LICENSE file.
+#if [ "${TARGETNOINSTALL:-c}" = 'c' ] && release -lt jessie -eq kali; then
+#    error 99 "e17 target is not supported on wheezy/kali."
+#fi
+#REQUIRES='gtk-extra'
+
+DESCRIPTION='Installs the enlightenment desktop environment. (Approx. 50MB)'
+HOSTBIN='startenlightenment'
+. "${TARGETSDIR:="$PWD"}/common"
+
+### Append to prepare.sh:
+install 'Enlightenment efl'
+
+TIPS="$TIPS
+efl-doc/stable 1.25.1-1 all
+  Documentation for the Enlightenment Foundation Libraries
+
+enlightenment/stable,stable-security 0.24.2-8+deb11u1 arm64
+  X11 window manager based on EFL
+
+enlightenment-data/stable,stable-security 0.24.2-8+deb11u1 all
+  X11 window manager based on EFL - run time data files
+
+enlightenment-dev/stable,stable-security 0.24.2-8+deb11u1 arm64
+  Enlightenment headers, static libraries and documentation
+
+ephoto/stable 1.5-3 arm64
+  Comprehensive Image Viewer Using EFL
+
+eterm/stable 0.9.6-6.1 arm64
+  Enlightened Terminal Emulator
+
+fonts-gfs-didot-classic/stable 1.1-6 all
+  greek font family (Classic Didot revival)
+
+gsetroot/stable 1.1-3+b1 arm64
+  grahical GTK-based front-end for Esetroot
+
+libbt-dev/stable 0.70.1-38 arm64
+  Blackbox - development library
+
+libbt0/stable 0.70.1-38 arm64
+  Blackbox - shared library
+
+libecore-bin/stable 1.25.1-1 arm64
+  EFL core abstraction layer - utilities
+
+libecore-con1/stable 1.25.1-1 arm64
+  Ecore functions for network connections
+
+libecore-drm2-1/stable 1.25.1-1 arm64
+  Ecore functions for DRM
+
+libecore-evas1/stable 1.25.1-1 arm64
+  Ecore functions for the Evas wrapper
+
+libecore-fb1/stable 1.25.1-1 arm64
+  Ecore functions for frame buffer displays
+
+libecore-file1/stable 1.25.1-1 arm64
+  Ecore functions for files and directories
+
+libecore-imf1/stable 1.25.1-1 arm64
+  Ecore functions for Input Method Framework
+
+libecore-input1/stable 1.25.1-1 arm64
+  Ecore functions for input devices
+
+libecore-ipc1/stable 1.25.1-1 arm64
+  Ecore functions for inter-process communication
+
+libecore-x1/stable 1.25.1-1 arm64
+  Ecore functions for X Window System displays
+
+libecore1/stable 1.25.1-1 arm64
+  EFL core abstraction layer
+
+libector1/stable 1.25.1-1 arm64
+  EFL vector graphics capabilities
+
+libedje-bin/stable 1.25.1-1 arm64
+  EFL layout and animation tools - utilities
+
+libedje1/stable 1.25.1-1 arm64
+  EFL layout and animation tools
+
+libeet-bin/stable 1.25.1-1 arm64
+  EFL file chunk reading/writing - utilities
+
+libeet1/stable 1.25.1-1 arm64
+  EFL file chunk reading/writing
+
+libeeze-bin/stable 1.25.1-1 arm64
+  EFL udev device manipulation - utilities
+
+libeeze1/stable 1.25.1-1 arm64
+  EFL udev device manipulation
+
+libefl-all-dev/stable 1.25.1-1 arm64
+  Enlightenment Foundation Libraries development files
+
+libefreet-bin/stable 1.25.1-1 arm64
+  EFL helper program to create efreet data caches
+
+libefreet1a/stable 1.25.1-1 arm64
+  EFL freedesktop.org spec implementations
+
+libeina-bin/stable 1.25.1-1 arm64
+  EFL optimized data types - extra tools
+
+libeina1a/stable 1.25.1-1 arm64
+  EFL optimized data types
+
+libeio1/stable 1.25.1-1 arm64
+  EFL non-blocking, threaded I/O
+
+libelementary-bin/stable 1.25.1-1 arm64
+  EFL widget set - helper programs
+
+libelementary-data/stable 1.25.1-1 all
+  EFL widget set - data files
+
+libelementary1/stable 1.25.1-1 arm64
+  EFL widget set
+
+libelput1/stable 1.25.1-1 arm64
+  EFL abstraction for libinput
+
+libembryo-bin/stable 1.25.1-1 arm64
+  EFL SMALL-based abstract machine (AMX) compiler
+
+libembryo1/stable 1.25.1-1 arm64
+  EFL SMALL-based abstract machine (AMX) bytecode interpreter
+
+libemile1/stable 1.25.1-1 arm64
+  EFL compression and encryption
+
+libemotion1/stable 1.25.1-1 arm64
+  EFL media object functionality
+
+libeolian-bin/stable 1.25.1-1 arm64
+  EFL object parser and C code generator - C code generator
+
+libeolian1/stable 1.25.1-1 arm64
+  EFL object parser and C code generator
+
+libethumb-client-bin/stable 1.25.1-1 arm64
+  EFL ethumb helper binary
+
+libethumb-client1/stable 1.25.1-1 arm64
+  EFL client for ethumb
+
+libethumb1/stable 1.25.1-1 arm64
+  EFL for thumbnail image creation
+
+libevas-loaders/stable 1.25.1-1 arm64
+  EFL additional loaders for Evas
+
+libevas1/stable 1.25.1-1 arm64
+  EFL advanced canvas library
+
+libevas1-engines-drm/stable 1.25.1-1 arm64
+  Evas module providing the DRM engine
+
+libevas1-engines-fb/stable 1.25.1-1 arm64
+  Evas module providing the Framebuffer engine
+
+libevas1-engines-wayland/stable 1.25.1-1 arm64
+  Evas module providing the Wayland engine
+
+libevas1-engines-x/stable 1.25.1-1 arm64
+  Evas module providing the X11 engines
+
+libtrue-perl/stable 1.0.2-1 arm64
+  automatically return a true value when a file is required
+
+stalonetray/stable 0.8.1-1+b1 arm64
+  Standalone freedesktop.org and KDE systray implementation
+
+tdc/stable 1.9-2 arm64
+  Tiny Dockable Clock
+
+terminology/stable 1.9.0-2 arm64
+  Enlightenment efl based terminal emulator
+
+terminology-data/stable 1.9.0-2 all
+  Enlightenment efl based terminal emulator data
+
+wmbutton/stable 0.7.1-1 arm64
+  dockapp displaying nine configurable buttons
+
+wmcpuload/stable 1.1.1-2 arm64
+  Dockapp that displays the current CPU usage
+
+wmctrl/stable 1.07-7+b1 arm64
+  control an EWMH/NetWM compatible X Window Manager
+
+wmdiskmon/stable 0.0.2-3+b1 arm64
+  dockapp to display disk usage
+
+wmlongrun/stable 0.3.1-1 arm64
+  program to monitor longrun status
+"
