@@ -193,7 +193,7 @@ gcc -g -Wall -Werror -Wno-error=unused-function -Os src/xi2event.c -lX11 -lXi -o
 gcc -g -Wall -Werror -Wno-error=unused-function -Os -shared -fPIC src/freon.c -ldl -ldrm -I/usr/include/libdrm -o chromeOSLinuxfreon.so
 #rm -f chromeOSLinux.zip && zip -q --junk-paths chromeOSLinux.zip 
 
-## the compile is complete, it runs from /usr/local/bin to install a chroot not /tmp tmpfs and ramfs, this is in swap space and complies with chromeOS security constraints
+## the compile is complete, it runs from /usr/local/bin to install a chroot  /tmp (/usr/local/bin) and ramfs(tmp), this is in swap space and complies with chromeOS security constraints
 ##
 
 ├── AUTHORS
