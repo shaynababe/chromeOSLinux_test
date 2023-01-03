@@ -192,7 +192,7 @@ fi
 #         libgl1-mesa-dri$backport libglu1-mesa xfonts-base x11-apps \
 #         x11-session-utils x11-utils x11-xfs-utils x11-xkb-utils \
 #         x11-xserver-utils xauth xinit xfonts-utils xkb-data xorg-docs-core \
-#         xterm x11-common xinput
+#         xterm x11-common xinput dbus-x11
 # else
     install xorg $installvideodrivers \
         $vmmouse
