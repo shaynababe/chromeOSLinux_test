@@ -9,22 +9,22 @@ if you have old crouton scritps you can save them via tar or cp ie sudo tar -czf
 ## https://drive.google.com/uc?export=download&id=12A95cImdJaP5KI6e-jDhaZgEfV2Fm_ck
 # to assist in the mounts being .exec and open please download https://drive.google.com/file/d/1okABZugr72CQTaVQfK3v1VikszTUNFq2/view?usp=sharing
 The is mnt.sh same install cp mnt.sh /usr/local/bin, sudo chmod 755 /usr/local/bin/mnt.sh or install -Dt /usr/local/bin -m 755 ~/Downloads/mnt.sh
-# chronos@localhost ~ $ sudo test4 -V
+# chronos@localhost ~ $ sudo test5-V
 # test4: version 1-20221219121458~main:56a040a8
 # chronos@localhost ~ $ 
 ## I have not decide on a release default yet Focal maybe bullseye is also being considered
 # test5 -p /home/SD/z/ -r bullseye -t xorg,xiwi,xfce -n bull
 
-## With this release test4 is namespaced for chromeOSLinux for task and builds in  /usr/local/bin for your local machine you need to have read write to run make all, in you test5 chroot cmd
+## With this release test5is namespaced for chromeOSLinux for task and builds in  /usr/local/bin for your local machine you need to have read write to run make all, in you test5 chroot cmd
 # git clone https://github.com/shaynababe/chromeOSLinux_test
 # sudo chmod 777 /usr/local/bin 
-# then test4 will compile just fine
+# then test5will compile just fine
 # make all
 ## It will download the debootstrap files to local /usr/local/bin not /tmp
 ## The file for install is test5 and is written to ~/Downloads/test5
-## After make all use the ctrl+alt+shift+<- keys to get back to a crosh shell, start a new shell and shell into it. the command of sudo cp ~/Downloads/test4 /usr/local/bin then sudo chmod 755 /usr/local/bin/test4 or install -Dt /usr/local/bin -m 755 ~/Downloads/test5
-## then the sudo test4 --help will show the cmds to get chroot installed
-## IE sudo test4 -p /home/SD/z/ -r bullseye -t xorg,xiwi,xfce -n bull #will work 
+## After make all use the ctrl+alt+shift+<- keys to get back to a crosh shell, start a new shell and shell into it. the command of sudo cp ~/Downloads/test5/usr/local/bin then sudo chmod 755 /usr/local/bin/test5or install -Dt /usr/local/bin -m 755 ~/Downloads/test5
+## then the sudo test5--help will show the cmds to get chroot installed
+## IE sudo test5-p /home/SD/z/ -r bullseye -t xorg,xiwi,xfce -n bull #will work 
 
 ## if you wish to view the activity start a new shell and cd /usr/local/bin
 ## you can ls -la to watch the install process 
@@ -32,10 +32,10 @@ The is mnt.sh same install cp mnt.sh /usr/local/bin, sudo chmod 755 /usr/local/b
 ![Screenshot_2022-12-19_13-48-13](https://user-images.githubusercontent.com/120763310/208530702-a211e371-ba0f-4329-b5d7-433041ba63ad.png)
 
 ```bash
-chronos@localhost /usr/local/bin $ sudo test4 
-test4 [options] -t targets
-test4 [options] -f backup_tarball
-test4 [options] -d -f bootstrap_tarball
+chronos@localhost /usr/local/bin $ sudo test5
+test5[options] -t targets
+test5[options] -f backup_tarball
+test5[options] -d -f bootstrap_tarball
 
 
 Constructs a chroot for running a more standard userspace alongside Chromium OS.
@@ -47,7 +47,7 @@ If run with -d, a bootstrap tarball is created to speed up chroot creation in
 the future. You can use bootstrap tarballs generated this way by passing them
 to -f the next time you create a chroot with the same architecture and release.
 
-test4 must be run as root unless -d is specified AND fakeroot is
+test5must be run as root unless -d is specified AND fakeroot is
 installed AND /tmp is mounted exec and dev.
 
 It is highly recommended to run this from a crosh shell (Ctrl+Alt+T), not VT2.
@@ -86,7 +86,7 @@ Options:
     -t TARGETS  Comma-separated list of environment targets to install.
                 Specify 'help' or 'list' to print out potential targets.
     -T TARGETFILE  Path to a custom target definition file that gets applied to
-                the chroot as if it were a target in the test4 bundle.
+                the chroot as if it were a target in the test5bundle.
     -u          If the chroot exists, runs the preparation step again.
                 You can use this to install new targets or update old ones.
                 Passing this parameter twice will force an update even if the
@@ -155,10 +155,164 @@ Makefile   build                               debootstrap  installer  targets
 README.md  chroot-bin                          host-bin     kernel
 ```
 
-# (bull3)z@localhost:~/crouton_Penguin/chromeOSLinux_test$ make all, thus build test4 process
+# (bull3)z@localhost:~/crouton_Penguin/chromeOSLinux_test$ make all, thus build test5process
 # rm -rf chromeOSLinux.build && mkdir -p chromeOSLinux.build \
-# && cp -at chromeOSLinux.build --parents chroot-bin/brightness chroot-bin/chromeOSLinux-noroot chroot-bin/chromeOSLinux-unity-autostart chroot-bin/chromeOSLinuxclip chroot-bin/chromeOSLinuxcycle chroot-bin/chromeOSLinuxfindnacl chroot-bin/chromeOSLinuxlhandler chroot-bin/chromeOSLinuxnotify chroot-bin/chromeOSLinuxpowerd chroot-bin/chromeOSLinuxtriggerd chroot-bin/chromeOSLinuxversion chroot-bin/chromeOSLinuxxinitrc-wrapper chroot-bin/crouton-noroot chroot-bin/crouton-unity-autostart chroot-bin/croutonclip chroot-bin/croutoncycle chroot-bin/croutonfindnacl chroot-bin/croutonnotify chroot-bin/croutonpowerd chroot-bin/croutontriggerd chroot-bin/croutonurlhandler chroot-bin/croutonversion chroot-bin/croutonxinitrc-wrapper chroot-bin/gnome-session-wrapper chroot-bin/host-dbus chroot-bin/host-wayland chroot-bin/setres chroot-bin/startgnome chroot-bin/startkde chroot-bin/startlxde chroot-bin/startunity chroot-bin/startxfce4 chroot-bin/volume chroot-bin/xinit chroot-bin/xiwi chroot-bin/z chroot-etc/chroot-etc-pam-d chroot-etc/kodi-cycle.py chroot-etc/kodi-keyboard.xml chroot-etc/pulseaudio-default.pa chroot-etc/unity-autostart.desktop chroot-etc/unity-profiled chroot-etc/xbindkeysrc.scm chroot-etc/xiwi.conf chroot-etc/xorg-dummy.conf chroot-etc/xorg-intel-sna.conf chroot-etc/xserverrc chroot-etc/xserverrc-local.example chroot-etc/xserverrc-xiwi chroot-etc/xserverrc-xorg \
-# && cp -Lprt chromeOSLinux.build --parents host-bin/crash_reporter_wrapper host-bin/delete-chroot host-bin/edit-chroot host-bin/enter-chroot host-bin/mount-chroot host-bin/startcli host-bin/starte17 host-bin/startgnome host-bin/startkde host-bin/startkodi host-bin/startlxde host-bin/startunity host-bin/startxfce4 host-bin/startxiwi host-bin/unmount-chroot installer/main.sh installer/prepare.sh installer/functions installer/arch/ar installer/arch/bootstrap installer/arch/defaults installer/arch/getrelease.sh installer/arch/new installer/arch/pkgdetails installer/arch/prepare installer/arch/releases installer/debian/ar installer/debian/bootstrap installer/debian/defaults installer/debian/getrelease.sh installer/debian/pkgdetails installer/debian/prepare installer/debian/releases installer/gentoo/ar installer/gentoo/bootstrap installer/gentoo/defaults installer/gentoo/getrelease.sh installer/gentoo/pkgdetails installer/gentoo/prepare installer/gentoo/releases installer/kali/ar installer/kali/bootstrap installer/kali/defaults installer/kali/getrelease.sh installer/kali/pkgdetails installer/kali/prepare installer/kali/releases installer/opensuse/ar installer/opensuse/bootstrap installer/opensuse/defaults installer/opensuse/getrelease.sh installer/opensuse/pkgdetails installer/opensuse/prepare installer/opensuse/releases installer/ubuntu/ar installer/ubuntu/bootstrap installer/ubuntu/defaults installer/ubuntu/getrelease.sh installer/ubuntu/pkgdetails installer/ubuntu/prepare installer/ubuntu/releases src/fbserver-proto.h src/fbserver.c src/findnacld.c src/freon.c src/vtmonitor.c src/websocket.c src/websocket.h src/xi2event.c targets/audio targets/chrome targets/chrome-beta targets/chrome-common targets/chrome-dev targets/chromium targets/cli-extra targets/common targets/core targets/e17 targets/extension targets/gnome targets/gnome-desktop targets/gtk-extra targets/kde targets/kde-desktop targets/keyboard targets/kodi targets/lxde targets/lxde-desktop targets/mate targets/mate-desktop targets/openoffice targets/post-common targets/tools targets/touch targets/unity targets/unity-desktop targets/x11 targets/x11-common targets/xbmc targets/xfce targets/xfce-desktop targets/xiwi targets/xorg \
+# && cp -at chromeOSLinux.build --parents 
+
+chroot-bin/brightness 
+chroot-bin/chromeOSLinux-noroot 
+chroot-bin/chromeOSLinux-unity-autostart 
+chroot-bin/chromeOSLinuxclip chroot-bin/chromeOSLinuxcycle 
+chroot-bin/chromeOSLinuxfindnacl chroot-bin/chromeOSLinuxlhandler 
+chroot-bin/chromeOSLinuxnotify chroot-bin/chromeOSLinuxpowerd 
+chroot-bin/chromeOSLinuxtriggerd chroot-bin/chromeOSLinuxversion 
+chroot-bin/chromeOSLinuxxinitrc-wrapper chroot-bin/crouton-noroot
+ 
+chroot-bin/crouton-unity-autostart 
+chroot-bin/croutonclip chroot-bin/croutoncycle 
+chroot-bin/croutonfindnacl chroot-bin/croutonnotify 
+chroot-bin/croutonpowerd 
+chroot-bin/croutontriggerd 
+chroot-bin/croutonurlhandler 
+chroot-bin/croutonversion 
+chroot-bin/croutonxinitrc-wrapper
+ 
+chroot-bin/gnome-session-wrapper 
+chroot-bin/host-dbus 
+chroot-bin/host-wayland 
+chroot-bin/setres 
+chroot-bin/startgnome 
+chroot-bin/startkde 
+chroot-bin/startlxde 
+chroot-bin/startunity 
+chroot-bin/startxfce4 
+chroot-bin/volume 
+chroot-bin/xinit 
+chroot-bin/xiwi chroot-bin/z 
+
+chroot-etc/chroot-etc-pam-d 
+chroot-etc/kodi-cycle.py 
+chroot-etc/kodi-keyboard.xml 
+chroot-etc/pulseaudio-default.pa 
+chroot-etc/unity-autostart.desktop 
+chroot-etc/unity-profiled 
+chroot-etc/xbindkeysrc.scm 
+chroot-etc/xiwi.conf 
+chroot-etc/xorg-dummy.conf 
+chroot-etc/xorg-intel-sna.conf 
+chroot-etc/xserverrc 
+chroot-etc/xserverrc-local.example 
+chroot-etc/xserverrc-xiwi 
+chroot-etc/xserverrc-xorg \
+
+# && cp -Lprt chromeOSLinux.build --parents 
+
+host-bin/crash_reporter_wrapper 
+host-bin/delete-chroot 
+host-bin/edit-chroot 
+host-bin/enter-chroot 
+host-bin/mount-chroot 
+host-bin/startcli 
+host-bin/starte17 
+host-bin/startgnome 
+host-bin/startkde 
+host-bin/startkodi 
+host-bin/startlxde 
+host-bin/startunity 
+host-bin/startxfce4 
+host-bin/startxiwi 
+host-bin/unmount-chroot
+ 
+installer/main.sh 
+installer/prepare.sh 
+installer/functions 
+installer/arch/ar 
+installer/arch/bootstrap 
+installer/arch/defaults 
+installer/arch/getrelease.sh 
+installer/arch/new i
+nstaller/arch/pkgdetails 
+installer/arch/prepare 
+installer/arch/releases 
+installer/debian/ar 
+installer/debian/bootstrap 
+installer/debian/defaults 
+installer/debian/getrelease.sh 
+installer/debian/pkgdetails 
+installer/debian/prepare 
+installer/debian/releases 
+installer/gentoo/ar 
+installer/gentoo/bootstrap 
+installer/gentoo/defaults 
+installer/gentoo/getrelease.sh 
+installer/gentoo/pkgdetails 
+installer/gentoo/prepare 
+installer/gentoo/releases 
+installer/kali/ar 
+installer/kali/bootstrap 
+installer/kali/defaults 
+installer/kali/getrelease.sh 
+installer/kali/pkgdetails 
+installer/kali/prepare 
+installer/kali/releases 
+installer/opensuse/ar 
+installer/opensuse/bootstrap 
+installer/opensuse/defaults 
+installer/opensuse/getrelease.sh 
+installer/opensuse/pkgdetails 
+installer/opensuse/prepare 
+installer/opensuse/releases 
+installer/ubuntu/ar 
+installer/ubuntu/bootstrap 
+installer/ubuntu/defaults 
+installer/ubuntu/getrelease.sh 
+installer/ubuntu/pkgdetails 
+installer/ubuntu/prepare 
+installer/ubuntu/releases
+ 
+src/fbserver-proto.h 
+src/fbserver.c 
+src/findnacld.c 
+src/freon.c 
+src/vtmonitor.c 
+src/websocket.c 
+src/websocket.h 
+src/xi2event.c 
+
+targets/audio 
+targets/chrome 
+targets/chrome-beta 
+targets/chrome-common 
+targets/chrome-dev 
+targets/chromium 
+targets/cli-extra 
+targets/common 
+targets/core 
+targets/e17 
+targets/extension 
+targets/gnome 
+targets/gnome-desktop 
+targets/gtk-extra 
+targets/kde 
+targets/kde-desktop 
+targets/keyboard 
+targets/kodi 
+targets/lxde 
+targets/lxde-desktop 
+targets/mate 
+targets/mate-desktop 
+targets/openoffice 
+targets/post-common 
+targets/tools 
+targets/touch 
+targets/unity 
+targets/unity-desktop 
+targets/x11 
+targets/x11-common 
+targets/xbmc 
+targets/xfce 
+targets/xfce-desktop 
+targets/xiwi targets/xorg \
 ## && for bootstrap in installer/arch/bootstrap installer/debian/bootstrap installer/gentoo/bootstrap installer/kali/bootstrap installer/opensuse/bootstrap installer/ubuntu/bootstrap; do \
 ```bash
 	tmp=chromeOSLinux.build; \
@@ -168,16 +322,16 @@ README.md  chroot-bin                          host-bin     kernel
 		|| ! rm -rf chromeOSLinux.build || exit 1; \
 done
 Preparing bootstrap dependencies for installer/ubuntu/bootstrap 
-### Thus is where test4 download debootstrap to local chroot /usr/local/bin in the development compile
+### Thus is where test5download debootstrap to local chroot /usr/local/bin in the development compile
 ######################################################################### 100.0%
-Patching debootstrap... # Test4 patches debootstrap to use curl for some activities because Chosh does not use apt-get but curl works
+Patching debootstrap... # test5patches debootstrap to use curl for some activities because Chosh does not use apt-get but curl works
 { \
 	sed -e "s/\$TARPARAMS/-j/" \
 		-e "s/VERSION=.*/VERSION='1-20221219121458~main:56a040a8'/" \ # it sets a version for the build
 		build/wrapper.sh \
 	&& (cd chromeOSLinux.build && tar --owner=root --group=root -c -j *)\ assign root and owner and group 
 	&& chmod +x /dev/stdout \
-;} > ~/Downloads/test4 || ! rm -f ~/Downloads/test4 # set output image
+;} > ~/Downloads/test5|| ! rm -f ~/Downloads/test5# set output image
 gcc -g -Wall -Werror -Wno-error=unused-function -Os src/fbserver.c -lX11 -lXdamage -lXext -lXfixes -lXtst -o chromeOSLinuxfbserver # write the system tasks
 gcc -g -Wall -Werror -Wno-error=unused-function -Os src/findnacld.c  -o chromeOSLinuxfindnacld
 In file included from src/findnacld.c:5:
