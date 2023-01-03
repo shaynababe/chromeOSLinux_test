@@ -6,7 +6,7 @@
 REQUIRES='gtk-extra'
 DESCRIPTION='Installs the enlightenment desktop environment.'
 HOSTBIN='startxenlightenment'
-CHROOTBIN='chromeOSLinux-noroot startenlightenment'
+CHROOTBIN='chromeOSLinux-noroot startxenlightenment'
 . "${TARGETSDIR:="$PWD"}/common"
 
 
@@ -14,5 +14,5 @@ CHROOTBIN='chromeOSLinux-noroot startenlightenment'
 install enlightenment enlightenment-data enlightenment-dev
 
 TIPS="$TIPS
-You can start enlightenment via the startenlightenment host command: sudo startenlightenment
+You can start enlightenment via the startxenlightenment host command: sudo startxenlightenment
 "
