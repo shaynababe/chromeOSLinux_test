@@ -1327,7 +1327,7 @@ setup_devices_fakechroot () {
 
 setup_devices_bind () {
 	local device
-	mount -t tmpfs nodev "$TARGET/dev"
+	mount -t ramfs nodev "$TARGET/dev"
 	umount_on_exit /dev
 	for device in null zero full random urandom tty pts shm ptmx; do
 		if [ -d "/dev/$device" ]; then

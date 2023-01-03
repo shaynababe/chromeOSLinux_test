@@ -2,22 +2,12 @@
 # Copyright (c) 2022 The chromeOSLinux Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
-REQUIRES='xorg'
 DESCRIPTION='tools'
 . "${TARGETSDIR:="$PWD"}/common"
 
 ### Append to prepare.sh:
 
-install 
-util-linux net-tools partitionmanager golang \
+install net-tools partitionmanager golang \
 bison cmake nano gedit gedit-plugins kwrite vlc \
 vlc-plugin-access-extra gnome-disk-utility gnome-sound-recorder \
-util-linux ninja-build meson cmake make \ 
-manpages-dev autoconf automake libtool flex bison gdb \
-gnupg patch git bzr gdbm-l10n libterm-readline-gnu-perl \ 
-libterm-readline-perl-perl libtap-harness-archive-perl dpkg-dev \
-libc-devtools libfile-fcntllock-perl bzip2 xz-utils
-
-
-
-
+ninja-build meson cmake make

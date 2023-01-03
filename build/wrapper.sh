@@ -37,7 +37,7 @@
 set -e
 
 VERSION='git'
-usr="/usr/local"
+usr="/usr/local/bin"
 # Minimum Chromium OS version is R45 stable
 CROS_MIN_VERS=7262
 
