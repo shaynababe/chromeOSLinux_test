@@ -11,11 +11,12 @@
 ## For those people you wish to skip the build process just down load test5 and run it
 ## https://drive.google.com/uc?export=download&id=1gtVFYfr_T6l7vhcLeI8z2hzCO36admsO
 # to assist in the mounts being .exec and open please download https://drive.google.com/file/d/1okABZugr72CQTaVQfK3v1VikszTUNFq2/view?usp=sharing
-The is mnt.sh same install cp mnt.sh /usr/local/bin, sudo chmod 755 /usr/local/bin/mnt.sh or install -Dt /usr/local/bin -m 755 ~/Downloads/mnt.sh
-<<<<<<< HEAD
-# chronos@localhost ~ $ sudo test5-V
-# test4: version 1-20221219121458~main:56a040a8
-# chronos@localhost ~ $ 
+# The is mnt.sh same install cp mnt.sh /usr/local/bin, sudo chmod 755 /usr/local/bin/mnt.sh or install -Dt /usr/local/bin -m 755 ~/Downloads/mnt.sh
+
+# chronos@localhost /usr/local/bin $ sudo test5 -V
+# test5: version 1-20230103082635~main:ab215034
+# chronos@localhost /usr/local/bin $$ 
+
 ## I have not decide on a release default yet Focal maybe bullseye is also being considered
 # test5 -p /home/SD/z/ -r bullseye -t xorg,xiwi,xfce -n bull
 
@@ -26,7 +27,6 @@ The is mnt.sh same install cp mnt.sh /usr/local/bin, sudo chmod 755 /usr/local/b
 # test5 -p /home/SD/z/ -r bullseye -t xorg,xiwi,xfce -n bull
 
 ## With this release test5 is namespaced for chromeOSLinux for task and builds in  /usr/local/bin for your local machine you need to have read write to run make all, in you test5 chroot cmd
->>>>>>> a9acf1f1a6609c9dc3c9cca66aa8f97055c99de6
 # git clone https://github.com/shaynababe/chromeOSLinux_test
 # sudo chmod 777 /usr/local/bin 
 # then test5will compile just fine
