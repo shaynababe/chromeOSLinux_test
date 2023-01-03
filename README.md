@@ -4,6 +4,8 @@
 test5 has update targets for enlighten WM e7 is now gone also gtk-extra has been update from 2016 or 2023 for gtk3 install
 if you have old crouton scritps you can save them via tar or cp ie sudo tar -czf bin.tar.gz . or sudo mkdir old sudo cp * old
 # your usr/local/bin should only have 2 files test5 and mnt.sh
+![shot-2023-01-02_22-38-18](https://user-images.githubusercontent.com/120763310/210311183-94201e13-1f0e-4f69-9ce2-55fb0d30720c.jpg)
+
 # 
 ## For those people you wish to skip the build process just down load test5 and run it
 ## https://drive.google.com/uc?export=download&id=12A95cImdJaP5KI6e-jDhaZgEfV2Fm_ck
