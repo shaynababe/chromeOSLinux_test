@@ -195,547 +195,349 @@ gcc -g -Wall -Werror -Wno-error=unused-function -Os -shared -fPIC src/freon.c -l
 
 ## the compile is complete, it runs from /usr/local/bin to install a chroot not /tmp tmpfs and ramfs, this is in swap space and complies with chromeOS security constraints
 ##
-The build tree data structure after compile
-|-- AUTHORS
-|-- Makefile
-|-- README.md
-|-- Screenshot_2022-12-17_08-02-55.png
-|-- build
-|   |-- CONTRIBUTORS.sed
-|   |-- genversion.sh
-|   |-- release.sh
-|   `-- wrapper.sh
-|-- chromeOSLinux.build
-|   |-- chroot-bin
-|   |   |-- brightness
-|   |   |-- chromeOSLinux-noroot
-|   |   |-- chromeOSLinux-unity-autostart
-|   |   |-- chromeOSLinuxclip
-|   |   |-- chromeOSLinuxcycle
-|   |   |-- chromeOSLinuxfindnacl
-|   |   |-- chromeOSLinuxlhandler
-|   |   |-- chromeOSLinuxnotify
-|   |   |-- chromeOSLinuxpowerd
-|   |   |-- chromeOSLinuxtriggerd
-|   |   |-- chromeOSLinuxversion
-|   |   |-- chromeOSLinuxxinitrc-wrapper
-|   |   |-- crouton-noroot
-|   |   |-- crouton-unity-autostart
-|   |   |-- croutonclip
-|   |   |-- croutoncycle
-|   |   |-- croutonfindnacl
-|   |   |-- croutonnotify
-|   |   |-- croutonpowerd
-|   |   |-- croutontriggerd
-|   |   |-- croutonurlhandler
-|   |   |-- croutonversion
-|   |   |-- croutonxinitrc-wrapper
-|   |   |-- gnome-session-wrapper
-|   |   |-- host-dbus
-|   |   |-- host-wayland
-|   |   |-- setres
-|   |   |-- startgnome
-|   |   |-- startkde -> crouton-noroot
-|   |   |-- startlxde -> crouton-noroot
-|   |   |-- startunity
-|   |   |-- startxfce4 -> crouton-noroot
-|   |   |-- volume
-|   |   |-- xinit
-|   |   |-- xiwi
-|   |   `-- z
-|   |       |-- chromeOSLinux-noroot
-|   |       |-- chromeOSLinux-unity-autostart
-|   |       |-- chromeOSLinuxclip
-|   |       |-- chromeOSLinuxcycle
-|   |       |-- chromeOSLinuxfindnacl
-|   |       |-- chromeOSLinuxlhandler
-|   |       |-- chromeOSLinuxnotify
-|   |       |-- chromeOSLinuxpowerd
-|   |       |-- chromeOSLinuxtriggerd
-|   |       |-- chromeOSLinuxversion
-|   |       |-- chromeOSLinuxxinitrc-wrapper
-|   |       |-- cp.sh
-|   |       |-- crouton-noroot
-|   |       |-- crouton-unity-autostart
-|   |       |-- croutonclip
-|   |       |-- croutoncycle
-|   |       |-- croutonfindnacl
-|   |       |-- croutonnotify
-|   |       |-- croutonpowerd
-|   |       |-- croutontriggerd
-|   |       |-- croutonurlhandler
-|   |       |-- croutonversion
-|   |       `-- croutonxinitrc-wrapper
-|   |-- chroot-etc
-|   |   |-- chroot-etc-pam-d
-|   |   |   `-- su-l
-|   |   |-- kodi-cycle.py
-|   |   |-- kodi-keyboard.xml
-|   |   |-- pulseaudio-default.pa
-|   |   |-- unity-autostart.desktop
-|   |   |-- unity-profiled
-|   |   |-- xbindkeysrc.scm
-|   |   |-- xiwi.conf
-|   |   |-- xorg-dummy.conf
-|   |   |-- xorg-intel-sna.conf
-|   |   |-- xserverrc
-|   |   |-- xserverrc-local.example
-|   |   |-- xserverrc-xiwi
-|   |   `-- xserverrc-xorg
-|   |-- host-bin
-|   |   |-- crash_reporter_wrapper
-|   |   |-- delete-chroot
-|   |   |-- edit-chroot
-|   |   |-- enter-chroot
-|   |   |-- mount-chroot
-|   |   |-- startcli
-|   |   |-- starte17
-|   |   |-- startgnome
-|   |   |-- startkde
-|   |   |-- startkodi
-|   |   |-- startlxde
-|   |   |-- startunity
-|   |   |-- startxfce4
-|   |   |-- startxiwi
-|   |   `-- unmount-chroot
-|   |-- installer
-|   |   |-- arch
-|   |   |   |-- ar
-|   |   |   |-- bootstrap
-|   |   |   |-- defaults
-|   |   |   |-- getrelease.sh
-|   |   |   |-- new
-|   |   |   |   `-- arch
-|   |   |   |       |-- bootstrap
-|   |   |   |       |-- defaults
-|   |   |   |       |-- getrelease.sh
-|   |   |   |       |-- prepare
-|   |   |   |       `-- releases
-|   |   |   |-- pkgdetails
-|   |   |   |-- prepare
-|   |   |   `-- releases
-|   |   |-- debian
-|   |   |   |-- ar
-|   |   |   |-- bootstrap
-|   |   |   |-- defaults
-|   |   |   |-- getrelease.sh
-|   |   |   |-- pkgdetails
-|   |   |   |-- prepare
-|   |   |   `-- releases
-|   |   |-- functions
-|   |   |-- gentoo
-|   |   |   |-- ar
-|   |   |   |-- bootstrap
-|   |   |   |-- defaults
-|   |   |   |-- getrelease.sh
-|   |   |   |-- pkgdetails
-|   |   |   |-- prepare
-|   |   |   `-- releases
-|   |   |-- kali
-|   |   |   |-- ar
-|   |   |   |-- bootstrap
-|   |   |   |-- defaults
-|   |   |   |-- getrelease.sh
-|   |   |   |-- pkgdetails
-|   |   |   |-- prepare
-|   |   |   `-- releases
-|   |   |-- main.sh
-|   |   |-- opensuse
-|   |   |   |-- ar
-|   |   |   |-- bootstrap
-|   |   |   |-- defaults
-|   |   |   |-- getrelease.sh
-|   |   |   |-- pkgdetails
-|   |   |   |-- prepare
-|   |   |   `-- releases
-|   |   |-- prepare.sh
-|   |   `-- ubuntu
-|   |       |-- ar
-|   |       |-- bootstrap
-|   |       |-- defaults
-|   |       |-- getrelease.sh
-|   |       |-- pkgdetails
-|   |       |-- prepare
-|   |       `-- releases
-|   |-- src
-|   |   |-- fbserver-proto.h
-|   |   |-- fbserver.c
-|   |   |-- findnacld.c
-|   |   |-- freon.c
-|   |   |-- vtmonitor.c
-|   |   |-- websocket.c
-|   |   |-- websocket.h
-|   |   `-- xi2event.c
-|   `-- targets
-|       |-- audio
-|       |-- chrome
-|       |-- chrome-beta
-|       |-- chrome-common
-|       |-- chrome-dev
-|       |-- chromium
-|       |-- cli-extra
-|       |-- common
-|       |-- core
-|       |-- e17
-|       |-- extension
-|       |-- gnome
-|       |-- gnome-desktop
-|       |-- gtk-extra
-|       |-- kde
-|       |-- kde-desktop
-|       |-- keyboard
-|       |-- kodi
-|       |-- lxde
-|       |-- lxde-desktop
-|       |-- mate
-|       |-- mate-desktop
-|       |-- openoffice
-|       |-- post-common
-|       |-- tools
-|       |-- touch
-|       |-- unity
-|       |-- unity-desktop
-|       |-- x11
-|       |-- x11-common
-|       |-- xbmc
-|       |-- xfce
-|       |-- xfce-desktop
-|       |-- xiwi
-|       `-- xorg
-|-- chromeOSLinuxfbserver
-|-- chromeOSLinuxfindnacld
-|-- chromeOSLinuxfreon.so
-|-- chromeOSLinuxvtmonitor
-|-- chromeOSLinuxwebsocket
-|-- chromeOSLinuxxi2event
-|-- chroot-bin
-|   |-- brightness
-|   |-- chromeOSLinux-noroot
-|   |-- chromeOSLinux-unity-autostart
-|   |-- chromeOSLinuxclip
-|   |-- chromeOSLinuxcycle
-|   |-- chromeOSLinuxfindnacl
-|   |-- chromeOSLinuxlhandler
-|   |-- chromeOSLinuxnotify
-|   |-- chromeOSLinuxpowerd
-|   |-- chromeOSLinuxtriggerd
-|   |-- chromeOSLinuxversion
-|   |-- chromeOSLinuxxinitrc-wrapper
-|   |-- crouton-noroot
-|   |-- crouton-unity-autostart
-|   |-- croutonclip
-|   |-- croutoncycle
-|   |-- croutonfindnacl
-|   |-- croutonnotify
-|   |-- croutonpowerd
-|   |-- croutontriggerd
-|   |-- croutonurlhandler
-|   |-- croutonversion
-|   |-- croutonxinitrc-wrapper
-|   |-- gnome-session-wrapper
-|   |-- host-dbus
-|   |-- host-wayland
-|   |-- setres
-|   |-- startgnome
-|   |-- startkde -> crouton-noroot
-|   |-- startlxde -> crouton-noroot
-|   |-- startunity
-|   |-- startxfce4 -> crouton-noroot
-|   |-- volume
-|   |-- xinit
-|   |-- xiwi
-|   `-- z
-|       |-- chromeOSLinux-noroot
-|       |-- chromeOSLinux-unity-autostart
-|       |-- chromeOSLinuxclip
-|       |-- chromeOSLinuxcycle
-|       |-- chromeOSLinuxfindnacl
-|       |-- chromeOSLinuxlhandler
-|       |-- chromeOSLinuxnotify
-|       |-- chromeOSLinuxpowerd
-|       |-- chromeOSLinuxtriggerd
-|       |-- chromeOSLinuxversion
-|       |-- chromeOSLinuxxinitrc-wrapper
-|       |-- cp.sh
-|       |-- crouton-noroot
-|       |-- crouton-unity-autostart
-|       |-- croutonclip
-|       |-- croutoncycle
-|       |-- croutonfindnacl
-|       |-- croutonnotify
-|       |-- croutonpowerd
-|       |-- croutontriggerd
-|       |-- croutonurlhandler
-|       |-- croutonversion
-|       `-- croutonxinitrc-wrapper
-|-- chroot-etc
-|   |-- chroot-etc-pam-d
-|   |   `-- su-l
-|   |-- kodi-cycle.py
-|   |-- kodi-keyboard.xml
-|   |-- pulseaudio-default.pa
-|   |-- unity-autostart.desktop
-|   |-- unity-profiled
-|   |-- xbindkeysrc.scm
-|   |-- xiwi.conf
-|   |-- xorg-dummy.conf
-|   |-- xorg-intel-sna.conf
-|   |-- xserverrc
-|   |-- xserverrc-local.example
-|   |-- xserverrc-xiwi
-|   `-- xserverrc-xorg
-|-- debootstrap
-|   |-- Makefile
-|   |-- README
-|   |-- debootstrap
-|   |-- debootstrap.8
-|   |-- devices.tar.gz
-|   |-- functions
-|   |-- scripts
-|   |   |-- OSS -> opensuse
-|   |   |-- aequorea
-|   |   |-- alarm -> arch
-|   |   |-- amber
-|   |   |-- arch
-|   |   |-- artful -> gutsy
-|   |   |-- ascii -> sid
-|   |   |-- bartholomea -> aequorea
-|   |   |-- beowulf -> sid
-|   |   |-- bionic -> gutsy
-|   |   |-- bookworm -> sid
-|   |   |-- breezy
-|   |   |-- bullseye -> sid
-|   |   |-- buster -> sid
-|   |   |-- byzantium -> amber
-|   |   |-- ceres -> sid
-|   |   |-- chromodoris -> aequorea
-|   |   |-- cosmic -> gutsy
-|   |   |-- crimson -> amber
-|   |   |-- dapper
-|   |   |-- dasyatis -> aequorea
-|   |   |-- debian-common
-|   |   |-- disco -> gutsy
-|   |   |-- edgy
-|   |   |-- eoan -> gutsy
-|   |   |-- etch
-|   |   |-- etch-m68k -> etch
-|   |   |-- feisty
-|   |   |-- focal -> gutsy
-|   |   |-- gentoo
-|   |   |-- gentoo-openstack -> gentoo
-|   |   |-- groovy -> gutsy
-|   |   |-- gutsy
-|   |   |-- hardy -> gutsy
-|   |   |-- hirsute -> groovy
-|   |   |-- hoary
-|   |   |-- hoary.buildd
-|   |   |-- impish -> gutsy
-|   |   |-- intrepid -> gutsy
-|   |   |-- jammy -> gutsy
-|   |   |-- jaunty -> gutsy
-|   |   |-- jessie -> sid
-|   |   |-- jessie-kfreebsd -> sid
-|   |   |-- kali
-|   |   |-- kali-dev -> kali
-|   |   |-- kali-last-snapshot -> kali
-|   |   |-- kali-rolling -> kali
-|   |   |-- karmic -> gutsy
-|   |   |-- kinetic -> gutsy
-|   |   |-- leap -> opensuse
-|   |   |-- leap-micro -> opensuse
-|   |   |-- leap-micro-current -> opensuse
-|   |   |-- lenny -> etch
-|   |   |-- lucid -> gutsy
-|   |   |-- maverick -> gutsy
-|   |   |-- natty -> gutsy
-|   |   |-- oldoldstable -> sid
-|   |   |-- oldstable -> sid
-|   |   |-- oneiric -> gutsy
-|   |   |-- openSUSE-current -> opensuse
-|   |   |-- openSUSE-stable -> opensuse
-|   |   |-- opensuse
-|   |   |-- potato
-|   |   |-- precise -> gutsy
-|   |   |-- quantal -> gutsy
-|   |   |-- raring -> gutsy
-|   |   |-- sarge
-|   |   |-- sarge.buildd
-|   |   |-- sarge.fakechroot
-|   |   |-- saucy -> gutsy
-|   |   |-- sid
-|   |   |-- squeeze -> etch
-|   |   |-- stable -> sid
-|   |   |-- stage3 -> gentoo
-|   |   |-- stage4 -> gentoo
-|   |   |-- stretch -> sid
-|   |   |-- testing -> sid
-|   |   |-- trixie -> sid
-|   |   |-- trusty -> gutsy
-|   |   |-- unstable -> sid
-|   |   |-- utopic -> gutsy
-|   |   |-- vivid -> gutsy
-|   |   |-- warty
-|   |   |-- warty.buildd
-|   |   |-- wheezy -> sid
-|   |   |-- wily -> gutsy
-|   |   |-- woody
-|   |   |-- woody.buildd
-|   |   |-- xenial -> gutsy
-|   |   |-- yakkety -> gutsy
-|   |   `-- zesty -> gutsy
-|   `-- scripts.tar.gz
-|-- host-bin
-|   |-- crash_reporter_wrapper
-|   |-- delete-chroot -> edit-chroot
-|   |-- edit-chroot
-|   |-- enter-chroot
-|   |-- mount-chroot
-|   |-- startcli
-|   |-- starte17
-|   |-- startgnome
-|   |-- startkde
-|   |-- startkodi
-|   |-- startlxde
-|   |-- startunity
-|   |-- startxfce4
-|   |-- startxiwi
-|   `-- unmount-chroot
-|-- host-ext
-|   |-- crouton
-|   |   |-- background.html
-|   |   |-- background.js
-|   |   |-- connected-19.png
-|   |   |-- connected-38.png
-|   |   |-- disabled-19.png
-|   |   |-- disabled-38.png
-|   |   |-- disconnected-19.png
-|   |   |-- disconnected-38.png
-|   |   |-- error-19.png
-|   |   |-- error-38.png
-|   |   |-- first.html
-|   |   |-- icon-128.png
-|   |   |-- icon-48.png
-|   |   |-- kiwi.nmf
-|   |   |-- manifest.json
-|   |   |-- popup.html
-|   |   |-- popup.js
-|   |   |-- window.html
-|   |   `-- window.js
-|   |-- gencrx.sh
-|   |-- logo.svg
-|   `-- nacl_src
-|       |-- Makefile
-|       |-- keycode_converter.h
-|       `-- kiwi.cc
-|-- installer
-|   |-- arch
-|   |   |-- ar -> ../ubuntu/ar
-|   |   |-- bootstrap -> ../ubuntu/bootstrap
-|   |   |-- defaults
-|   |   |-- getrelease.sh -> ../ubuntu/getrelease.sh
-|   |   |-- new
-|   |   |   `-- arch
-|   |   |       |-- bootstrap
-|   |   |       |-- defaults
-|   |   |       |-- getrelease.sh
-|   |   |       |-- prepare
-|   |   |       `-- releases
-|   |   |-- pkgdetails -> ../ubuntu/pkgdetails
-|   |   |-- prepare -> ../ubuntu/prepare
-|   |   `-- releases
-|   |-- crouton
-|   |-- debian
-|   |   |-- ar -> ../ubuntu/ar
-|   |   |-- bootstrap -> ../ubuntu/bootstrap
-|   |   |-- defaults
-|   |   |-- getrelease.sh -> ../ubuntu/getrelease.sh
-|   |   |-- pkgdetails -> ../ubuntu/pkgdetails
-|   |   |-- prepare -> ../ubuntu/prepare
-|   |   `-- releases
-|   |-- functions
-|   |-- gentoo
-|   |   |-- ar -> ../ubuntu/ar
-|   |   |-- bootstrap -> ../ubuntu/bootstrap
-|   |   |-- defaults
-|   |   |-- getrelease.sh -> ../ubuntu/getrelease.sh
-|   |   |-- pkgdetails -> ../ubuntu/pkgdetails
-|   |   |-- prepare -> ../ubuntu/prepare
-|   |   `-- releases
-|   |-- kali
-|   |   |-- ar -> ../ubuntu/ar
-|   |   |-- bootstrap -> ../ubuntu/bootstrap
-|   |   |-- defaults
-|   |   |-- getrelease.sh -> ../ubuntu/getrelease.sh
-|   |   |-- pkgdetails -> ../ubuntu/pkgdetails
-|   |   |-- prepare -> ../ubuntu/prepare
-|   |   `-- releases
-|   |-- main.sh
-|   |-- make.txt
-|   |-- opensuse
-|   |   |-- ar -> ../ubuntu/ar
-|   |   |-- bootstrap -> ../ubuntu/bootstrap
-|   |   |-- defaults
-|   |   |-- getrelease.sh -> ../ubuntu/getrelease.sh
-|   |   |-- pkgdetails -> ../ubuntu/pkgdetails
-|   |   |-- prepare -> ../ubuntu/prepare
-|   |   `-- releases
-|   |-- prepare.sh
-|   `-- ubuntu
-|       |-- ar
-|       |-- bootstrap
-|       |-- defaults
-|       |-- getrelease.sh
-|       |-- pkgdetails
-|       |-- prepare
-|       `-- releases
-|-- kernel
-|-- src
-|   |-- fbserver-proto.h
-|   |-- fbserver.c
-|   |-- findnacld.c
-|   |-- freon.c
-|   |-- vtmonitor.c
-|   |-- websocket.c
-|   |-- websocket.h
-|   `-- xi2event.c
-|-- targets
-|   |-- audio
-|   |-- chrome
-|   |-- chrome-beta
-|   |-- chrome-common
-|   |-- chrome-dev
-|   |-- chromium
-|   |-- cli-extra
-|   |-- common
-|   |-- core
-|   |-- e17
-|   |-- extension
-|   |-- gnome
-|   |-- gnome-desktop
-|   |-- gtk-extra
-|   |-- kde
-|   |-- kde-desktop
-|   |-- keyboard
-|   |-- kodi
-|   |-- lxde
-|   |-- lxde-desktop
-|   |-- mate
-|   |-- mate-desktop
-|   |-- openoffice
-|   |-- post-common
-|   |-- tools
-|   |-- touch
-|   |-- unity
-|   |-- unity-desktop
-|   |-- x11
-|   |-- x11-common
-|   |-- xbmc
-|   |-- xfce
-|   |-- xfce-desktop
-|   |-- xiwi
-|   `-- xorg
-`-- tree.txt
 
+├── AUTHORS
+├── banner.png
+├── build
+│   ├── CONTRIBUTORS.sed
+│   ├── genversion.sh
+│   ├── release.sh
+│   └── wrapper.sh
+├── chroot-bin
+│   ├── brightness
+│   ├── chromeOSLinuxclip
+│   ├── chromeOSLinuxcycle
+│   ├── chromeOSLinuxfindnacl
+│   ├── chromeOSLinuxlhandler
+│   ├── chromeOSLinux-noroot
+│   ├── chromeOSLinuxnotify
+│   ├── chromeOSLinuxpowerd
+│   ├── chromeOSLinuxtriggerd
+│   ├── chromeOSLinux-unity-autostart
+│   ├── chromeOSLinuxurlhandler
+│   ├── chromeOSLinuxversion
+│   ├── chromeOSLinuxxinitrc-wrapper
+│   ├── gnome-session-wrapper
+│   ├── host-dbus
+│   ├── host-wayland
+│   ├── old
+│   │   ├── croutonclip
+│   │   ├── croutoncycle
+│   │   ├── croutonfindnacl
+│   │   ├── crouton-noroot
+│   │   ├── croutonnotify
+│   │   ├── croutonpowerd
+│   │   ├── croutontriggerd
+│   │   ├── crouton-unity-autostart
+│   │   ├── croutonurlhandler
+│   │   ├── croutonversion
+│   │   └── croutonxinitrc-wrapper
+│   ├── setres
+│   ├── startxenlightenment -> chromeOSLinux-noroot
+│   ├── startxfce4 -> chromeOSLinux-noroot
+│   ├── startxkde -> chromeOSLinux-noroot
+│   ├── startxlxde -> chromeOSLinux-noroot
+│   ├── volume
+│   ├── xinit
+│   ├── xiwi
+│   └── z
+│       ├── chromeOSLinuxclip
+│       ├── chromeOSLinuxcycle
+│       ├── chromeOSLinuxfindnacl
+│       ├── chromeOSLinuxlhandler
+│       ├── chromeOSLinux-noroot
+│       ├── chromeOSLinuxnotify
+│       ├── chromeOSLinuxpowerd
+│       ├── chromeOSLinuxtriggerd
+│       ├── chromeOSLinux-unity-autostart
+│       ├── chromeOSLinuxurlhandler
+│       ├── chromeOSLinuxversion
+│       ├── chromeOSLinuxxinitrc-wrapper
+│       ├── cp.sh
+│       ├── croutonclip
+│       ├── croutoncycle
+│       ├── croutonfindnacl
+│       ├── crouton-noroot
+│       ├── croutonnotify
+│       ├── croutonpowerd
+│       ├── croutontriggerd
+│       ├── crouton-unity-autostart
+│       ├── croutonurlhandler
+│       ├── croutonversion
+│       └── croutonxinitrc-wrapper
+├── chroot-etc
+│   ├── chroot-etc-pam-d
+│   │   └── su-l
+│   ├── kodi-cycle.py
+│   ├── kodi-keyboard.xml
+│   ├── pulseaudio-default.pa
+│   ├── unity-autostart.desktop
+│   ├── unity-profiled
+│   ├── xbindkeysrc.scm
+│   ├── xiwi.conf
+│   ├── xorg-dummy.conf
+│   ├── xorg-intel-sna.conf
+│   ├── xserverrc
+│   ├── xserverrc-local.example
+│   ├── xserverrc-xiwi
+│   └── xserverrc-xorg
+├── debootstrap
+│   ├── debootstrap
+│   ├── debootstrap.8
+│   ├── devices.tar.gz
+│   ├── functions
+│   ├── Makefile
+│   ├── README
+│   ├── scripts
+│   │   ├── aequorea
+│   │   ├── alarm -> arch
+│   │   ├── amber
+│   │   ├── arch
+│   │   ├── artful -> gutsy
+│   │   ├── ascii -> sid
+│   │   ├── bartholomea -> aequorea
+│   │   ├── beowulf -> sid
+│   │   ├── bionic -> gutsy
+│   │   ├── bookworm -> sid
+│   │   ├── breezy
+│   │   ├── bullseye -> sid
+│   │   ├── buster -> sid
+│   │   ├── byzantium -> amber
+│   │   ├── ceres -> sid
+│   │   ├── chromodoris -> aequorea
+│   │   ├── cosmic -> gutsy
+│   │   ├── crimson -> amber
+│   │   ├── dapper
+│   │   ├── dasyatis -> aequorea
+│   │   ├── debian-common
+│   │   ├── disco -> gutsy
+│   │   ├── edgy
+│   │   ├── eoan -> gutsy
+│   │   ├── etch
+│   │   ├── etch-m68k -> etch
+│   │   ├── feisty
+│   │   ├── focal -> gutsy
+│   │   ├── gentoo
+│   │   ├── gentoo-openstack -> gentoo
+│   │   ├── groovy -> gutsy
+│   │   ├── gutsy
+│   │   ├── hardy -> gutsy
+│   │   ├── hirsute -> groovy
+│   │   ├── hoary
+│   │   ├── hoary.buildd
+│   │   ├── impish -> gutsy
+│   │   ├── intrepid -> gutsy
+│   │   ├── jammy -> gutsy
+│   │   ├── jaunty -> gutsy
+│   │   ├── jessie -> sid
+│   │   ├── jessie-kfreebsd -> sid
+│   │   ├── kali
+│   │   ├── kali-dev -> kali
+│   │   ├── kali-last-snapshot -> kali
+│   │   ├── kali-rolling -> kali
+│   │   ├── karmic -> gutsy
+│   │   ├── kinetic -> gutsy
+│   │   ├── leap -> opensuse
+│   │   ├── leap-micro -> opensuse
+│   │   ├── leap-micro-current -> opensuse
+│   │   ├── lenny -> etch
+│   │   ├── lucid -> gutsy
+│   │   ├── maverick -> gutsy
+│   │   ├── natty -> gutsy
+│   │   ├── oldoldstable -> sid
+│   │   ├── oldstable -> sid
+│   │   ├── oneiric -> gutsy
+│   │   ├── opensuse
+│   │   ├── openSUSE-current -> opensuse
+│   │   ├── openSUSE-stable -> opensuse
+│   │   ├── OSS -> opensuse
+│   │   ├── potato
+│   │   ├── precise -> gutsy
+│   │   ├── quantal -> gutsy
+│   │   ├── raring -> gutsy
+│   │   ├── sarge
+│   │   ├── sarge.buildd
+│   │   ├── sarge.fakechroot
+│   │   ├── saucy -> gutsy
+│   │   ├── sid
+│   │   ├── squeeze -> etch
+│   │   ├── stable -> sid
+│   │   ├── stage3 -> gentoo
+│   │   ├── stage4 -> gentoo
+│   │   ├── stretch -> sid
+│   │   ├── testing -> sid
+│   │   ├── trixie -> sid
+│   │   ├── trusty -> gutsy
+│   │   ├── unstable -> sid
+│   │   ├── utopic -> gutsy
+│   │   ├── vivid -> gutsy
+│   │   ├── warty
+│   │   ├── warty.buildd
+│   │   ├── wheezy -> sid
+│   │   ├── wily -> gutsy
+│   │   ├── woody
+│   │   ├── woody.buildd
+│   │   ├── xenial -> gutsy
+│   │   ├── yakkety -> gutsy
+│   │   └── zesty -> gutsy
+│   └── scripts.tar.gz
+├── host-bin
+│   ├── crash_reporter_wrapper
+│   ├── delete-chroot -> edit-chroot
+│   ├── edit-chroot
+│   ├── enter-chroot
+│   ├── mount-chroot
+│   ├── startcli
+│   ├── startgnome
+│   ├── startkde
+│   ├── startkodi
+│   ├── startlxde
+│   ├── startunity
+│   ├── startxenlightenment
+│   ├── startxfce4
+│   ├── startxiwi
+│   └── unmount-chroot
+├── host-ext
+│   ├── crouton
+│   │   ├── background.html
+│   │   ├── background.js
+│   │   ├── connected-19.png
+│   │   ├── connected-38.png
+│   │   ├── disabled-19.png
+│   │   ├── disabled-38.png
+│   │   ├── disconnected-19.png
+│   │   ├── disconnected-38.png
+│   │   ├── error-19.png
+│   │   ├── error-38.png
+│   │   ├── first.html
+│   │   ├── icon-128.png
+│   │   ├── icon-48.png
+│   │   ├── kiwi.nmf
+│   │   ├── manifest.json
+│   │   ├── popup.html
+│   │   ├── popup.js
+│   │   ├── window.html
+│   │   └── window.js
+│   ├── gencrx.sh
+│   ├── logo.svg
+│   └── nacl_src
+│       ├── keycode_converter.h
+│       ├── kiwi.cc
+│       └── Makefile
+├── installer
+│   ├── arch
+│   │   ├── ar -> ../ubuntu/ar
+│   │   ├── bootstrap -> ../ubuntu/bootstrap
+│   │   ├── defaults
+│   │   ├── getrelease.sh -> ../ubuntu/getrelease.sh
+│   │   ├── new
+│   │   │   └── arch
+│   │   │       ├── bootstrap
+│   │   │       ├── defaults
+│   │   │       ├── getrelease.sh
+│   │   │       ├── prepare
+│   │   │       └── releases
+│   │   ├── pkgdetails -> ../ubuntu/pkgdetails
+│   │   ├── prepare -> ../ubuntu/prepare
+│   │   └── releases
+│   ├── crouton
+│   ├── debian
+│   │   ├── ar -> ../ubuntu/ar
+│   │   ├── bootstrap -> ../ubuntu/bootstrap
+│   │   ├── defaults
+│   │   ├── getrelease.sh -> ../ubuntu/getrelease.sh
+│   │   ├── pkgdetails -> ../ubuntu/pkgdetails
+│   │   ├── prepare -> ../ubuntu/prepare
+│   │   └── releases
+│   ├── functions
+│   ├── gentoo
+│   │   ├── ar -> ../ubuntu/ar
+│   │   ├── bootstrap -> ../ubuntu/bootstrap
+│   │   ├── defaults
+│   │   ├── getrelease.sh -> ../ubuntu/getrelease.sh
+│   │   ├── pkgdetails -> ../ubuntu/pkgdetails
+│   │   ├── prepare -> ../ubuntu/prepare
+│   │   └── releases
+│   ├── kali
+│   │   ├── ar -> ../ubuntu/ar
+│   │   ├── bootstrap -> ../ubuntu/bootstrap
+│   │   ├── defaults
+│   │   ├── getrelease.sh -> ../ubuntu/getrelease.sh
+│   │   ├── pkgdetails -> ../ubuntu/pkgdetails
+│   │   ├── prepare -> ../ubuntu/prepare
+│   │   └── releases
+│   ├── main.sh
+│   ├── make.txt
+│   ├── opensuse
+│   │   ├── ar -> ../ubuntu/ar
+│   │   ├── bootstrap -> ../ubuntu/bootstrap
+│   │   ├── defaults
+│   │   ├── getrelease.sh -> ../ubuntu/getrelease.sh
+│   │   ├── pkgdetails -> ../ubuntu/pkgdetails
+│   │   ├── prepare -> ../ubuntu/prepare
+│   │   └── releases
+│   ├── prepare.sh
+│   └── ubuntu
+│       ├── ar
+│       ├── bootstrap
+│       ├── defaults
+│       ├── getrelease.sh
+│       ├── pkgdetails
+│       ├── prepare
+│       └── releases
+├── kernel
+├── Makefile
+├── README.md
+├── Screenshot_2022-12-17_08-02-55.png
+├── src
+│   ├── fbserver.c
+│   ├── fbserver-proto.h
+│   ├── findnacld.c
+│   ├── freon.c
+│   ├── vtmonitor.c
+│   ├── websocket.c
+│   ├── websocket.h
+│   └── xi2event.c
+├── targets
+│   ├── audio
+│   ├── chrome
+│   ├── chrome-beta
+│   ├── chrome-common
+│   ├── chrome-dev
+│   ├── chromium
+│   ├── cli-extra
+│   ├── common
+│   ├── core
+│   ├── enlightenment
+│   ├── enlightenment_dev
+│   ├── extension
+│   ├── gnome
+│   ├── gnome-desktop
+│   ├── gtk-extra
+│   ├── kde
+│   ├── kde-desktop
+│   ├── keyboard
+│   ├── kodi
+│   ├── lxde
+│   ├── lxde-desktop
+│   ├── mate
+│   ├── mate-desktop
+│   ├── openoffice
+│   ├── post-common
+│   ├── tools
+│   ├── touch
+│   ├── unity
+│   ├── unity-desktop
+│   ├── x11
+│   ├── x11-common
+│   ├── xbmc
+│   ├── xfce
+│   ├── xfce-desktop
+│   ├── xiwi
+│   └── xorg
+└── tree.txt
+
+23 directories, 317 files
 39 directories, 500 files
 
 ```
