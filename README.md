@@ -1,10 +1,11 @@
 ![](https://github.com/user/banner.png) 
 ![banner](https://user-images.githubusercontent.com/120763310/208612080-3d83f547-7416-4276-8927-8e5535b8031d.png)
 # This is not compatible with crouton shell scripts and the new files need to be copied to your crosh shell /usr/local/bin is using this ie .../bin/chroots cp ./bin/* /usr/local/bin
+test5 has update targets for enlighten WM e7 is now gone also gtk-extra has been update from 2016 or 2023 for gtk3 install
 if you have old crouton scritps you can save them via tar or cp ie sudo tar -czf bin.tar.gz . or sudo mkdir old sudo cp * old
-# your usr/local/bin should only have 2 files test4 and mnt.sh
+# your usr/local/bin should only have 2 files test5 and mnt.sh
 # 
-## For those people you wish to skip the build process just down load test4 and run it
+## For those people you wish to skip the build process just down load test5 and run it
 ## https://drive.google.com/uc?export=download&id=12A95cImdJaP5KI6e-jDhaZgEfV2Fm_ck
 # to assist in the mounts being .exec and open please download https://drive.google.com/file/d/1okABZugr72CQTaVQfK3v1VikszTUNFq2/view?usp=sharing
 The is mnt.sh same install cp mnt.sh /usr/local/bin, sudo chmod 755 /usr/local/bin/mnt.sh or install -Dt /usr/local/bin -m 755 ~/Downloads/mnt.sh
@@ -12,16 +13,16 @@ The is mnt.sh same install cp mnt.sh /usr/local/bin, sudo chmod 755 /usr/local/b
 # test4: version 1-20221219121458~main:56a040a8
 # chronos@localhost ~ $ 
 ## I have not decide on a release default yet Focal maybe bullseye is also being considered
-# test4 -p /home/SD/z/ -r bullseye -t xorg,xiwi,xfce -n bull
+# test5 -p /home/SD/z/ -r bullseye -t xorg,xiwi,xfce -n bull
 
-## With this release test4 is namespaced for chromeOSLinux for task and builds in  /usr/local/bin for your local machine you need to have read write to run make all, in you test4 chroot cmd
+## With this release test4 is namespaced for chromeOSLinux for task and builds in  /usr/local/bin for your local machine you need to have read write to run make all, in you test5 chroot cmd
 # git clone https://github.com/shaynababe/chromeOSLinux_test
 # sudo chmod 777 /usr/local/bin 
 # then test4 will compile just fine
 # make all
 ## It will download the debootstrap files to local /usr/local/bin not /tmp
-## The file for install is test4 and is written to ~/Downloads/test4
-## After make all use the ctrl+alt+shift+<- keys to get back to a crosh shell, start a new shell and shell into it. the command of sudo cp ~/Downloads/test4 /usr/local/bin then sudo chmod 755 /usr/local/bin/test4 or install -Dt /usr/local/bin -m 755 ~/Downloads/test4
+## The file for install is test5 and is written to ~/Downloads/test5
+## After make all use the ctrl+alt+shift+<- keys to get back to a crosh shell, start a new shell and shell into it. the command of sudo cp ~/Downloads/test4 /usr/local/bin then sudo chmod 755 /usr/local/bin/test4 or install -Dt /usr/local/bin -m 755 ~/Downloads/test5
 ## then the sudo test4 --help will show the cmds to get chroot installed
 ## IE sudo test4 -p /home/SD/z/ -r bullseye -t xorg,xiwi,xfce -n bull #will work 
 
