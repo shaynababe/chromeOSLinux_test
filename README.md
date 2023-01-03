@@ -1,14 +1,18 @@
 ![](https://github.com/user/banner.png) 
 ![banner](https://user-images.githubusercontent.com/120763310/208612080-3d83f547-7416-4276-8927-8e5535b8031d.png)
 # This is not compatible with crouton shell scripts and the new files need to be copied to your crosh shell /usr/local/bin is using this ie .../bin/chroots cp ./bin/* /usr/local/bin
-test5 has update targets for enlighten WM e7 is now gone also gtk-extra has been update from 2016 or 2023 for gtk3 install
-if you have old crouton scritps you can save them via tar or cp ie sudo tar -czf bin.tar.gz . or sudo mkdir old sudo cp * old
+# test5 has update targets for enlighten WM e7 is now gone also gtk-extra has been update from 2016 or 2023 for gtk3 install
+
+# if you have old crouton scritps you can save them via tar or cp ie sudo tar -czf bin.tar.gz . or sudo mkdir old sudo cp * old
 # your usr/local/bin should only have 2 files test5 and mnt.sh
+![shot-2023-01-02_22-38-18](https://user-images.githubusercontent.com/120763310/210311183-94201e13-1f0e-4f69-9ce2-55fb0d30720c.jpg)
+
 # 
 ## For those people you wish to skip the build process just down load test5 and run it
-## https://drive.google.com/uc?export=download&id=12A95cImdJaP5KI6e-jDhaZgEfV2Fm_ck
+## https://drive.google.com/uc?export=download&id=1gtVFYfr_T6l7vhcLeI8z2hzCO36admsO
 # to assist in the mounts being .exec and open please download https://drive.google.com/file/d/1okABZugr72CQTaVQfK3v1VikszTUNFq2/view?usp=sharing
 The is mnt.sh same install cp mnt.sh /usr/local/bin, sudo chmod 755 /usr/local/bin/mnt.sh or install -Dt /usr/local/bin -m 755 ~/Downloads/mnt.sh
+<<<<<<< HEAD
 # chronos@localhost ~ $ sudo test5-V
 # test4: version 1-20221219121458~main:56a040a8
 # chronos@localhost ~ $ 
@@ -16,6 +20,13 @@ The is mnt.sh same install cp mnt.sh /usr/local/bin, sudo chmod 755 /usr/local/b
 # test5 -p /home/SD/z/ -r bullseye -t xorg,xiwi,xfce -n bull
 
 ## With this release test5is namespaced for chromeOSLinux for task and builds in  /usr/local/bin for your local machine you need to have read write to run make all, in you test5 chroot cmd
+=======
+
+## I have not decide on a release default yet Focal maybe bullseye is also being considered
+# test5 -p /home/SD/z/ -r bullseye -t xorg,xiwi,xfce -n bull
+
+## With this release test5 is namespaced for chromeOSLinux for task and builds in  /usr/local/bin for your local machine you need to have read write to run make all, in you test5 chroot cmd
+>>>>>>> a9acf1f1a6609c9dc3c9cca66aa8f97055c99de6
 # git clone https://github.com/shaynababe/chromeOSLinux_test
 # sudo chmod 777 /usr/local/bin 
 # then test5will compile just fine
