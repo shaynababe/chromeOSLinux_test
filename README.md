@@ -16,7 +16,7 @@ The is mnt.sh same install cp mnt.sh /usr/local/bin, sudo chmod 755 /usr/local/b
 ## I have not decide on a release default yet Focal maybe bullseye is also being considered
 # test5 -p /home/SD/z/ -r bullseye -t xorg,xiwi,xfce -n bull
 
-## With this release test4 is namespaced for chromeOSLinux for task and builds in  /usr/local/bin for your local machine you need to have read write to run make all, in you test5 chroot cmd
+## With this release test5 is namespaced for chromeOSLinux for task and builds in  /usr/local/bin for your local machine you need to have read write to run make all, in you test5 chroot cmd
 # git clone https://github.com/shaynababe/chromeOSLinux_test
 # sudo chmod 777 /usr/local/bin 
 # then test4 will compile just fine
