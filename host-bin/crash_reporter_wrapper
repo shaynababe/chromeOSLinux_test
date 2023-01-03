@@ -104,15 +104,17 @@ if [ "${UID:-0}" != 0 -o "${USER:-root}" != 'root' ]; then
     exit 2
 fi
 
+
+#
 if [ "$#" = 1 ]; then
     # Always register the script from /var/run for safety
     if [ "$0" != "$IDEAL_LOCATION" ]; then
         dir="${IDEAL_LOCATION%/*}"
         if ! mountpoint "$dir" >/dev/null 2>/dev/null; then
             mkdir -p "$dir"
-            mount -t tmpfs \
+            mount -t ramfs \
                   -o 'rw,nosuid,nodev,exec,noatime,mode=755,size=128K' \
-                  tmpfs "$dir"
+                  ramfs "$dir"
         fi
         cp -fT "$0" "$IDEAL_LOCATION"
         chmod 500 "$IDEAL_LOCATION"
