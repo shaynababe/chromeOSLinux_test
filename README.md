@@ -17,13 +17,13 @@
 # test5: version 1-20230103082635~main:ab215034
 # chronos@localhost /usr/local/bin $$ 
 
-## I have not decide on a release default yet Focal maybe bullseye is also being considered
+# release default bullseye 
+
 # test5 -p /home/SD/z/ -r bullseye -t xorg,xiwi,xfce -n bull
 
 ## With this release test5is namespaced for chromeOSLinux for task and builds in  /usr/local/bin for your local machine you need to have read write to run make all, in you test5 chroot cmd
 =======
 
-## I have not decide on a release default yet Focal maybe bullseye is also being considered
 ## you have install curl for debootstrap to work 
 ## sudo apt install curl
 ## With this release test5 is namespaced for chromeOSLinux for task and builds in  /usr/local/bin for your local machine you need to have read write to run make all, in you test5 chroot cmd
