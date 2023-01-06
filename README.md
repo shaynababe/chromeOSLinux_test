@@ -3,7 +3,7 @@
 # This is not compatible with crouton shell scripts and the new files need to be copied to your crosh shell /usr/local/bin is using this ie .../bin/chroots cp ./bin/* /usr/local/bin
 # test5 has update targets for enlighten WM e7 is now gone also gtk-extra has been update from 2016 or 2023 for gtk3 install
 
-#if a effort to evaluate systemD is no underway it will start with dual boot a chromebook firmware update
+# if a effort to evaluate systemD is no underway it will start with dual boot a chromebook firmware update
 ![Screenshot_2023-01-06_11-38-12](https://user-images.githubusercontent.com/120763310/211087399-2ecd86fa-c2af-4625-b062-f41bd8d9bfbe.png)
 
 # if you have old crouton scritps you can save them via tar or cp ie sudo tar -czf bin.tar.gz . or sudo mkdir old sudo cp * old
