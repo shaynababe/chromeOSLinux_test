@@ -951,6 +951,7 @@ z@m900:~$
 z@m900:~$ [2784360:2784360:0109/052730.235806:ERROR:interface_endpoint_client.cc(694)] Message 1 rejected by interface blink.mojom.WidgetHost
 [2784360:2784360:0109/052924.503612:ERROR:interface_endpoint_client.cc(694)] Message 1 rejected by interface blink.mojom.WidgetHost
 ```
+![Screenshot_2023-01-09_06-05-18](https://user-images.githubusercontent.com/120763310/211326691-55abd9bc-65de-4341-b42d-99617f79a60c.png)
 ![Screenshot_2022-12-17_16-15-50](https://user-images.githubusercontent.com/120763310/208271097-bbf981fb-0b3b-4db7-838d-ebebbc63adfa.png)
 ![Screenshot_2022-12-17_08-02-55](https://user-images.githubusercontent.com/120763310/208250812-35026e0b-325b-40c1-8a1a-02757bf6e682.png)
 # chromeOSlinux_test
