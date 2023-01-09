@@ -6,7 +6,7 @@
 # if a effort to evaluate systemD is now underway it will start with dual boot a chromebook firmware update
 ![Screenshot_2023-01-06_11-38-12](https://user-images.githubusercontent.com/120763310/211087399-2ecd86fa-c2af-4625-b062-f41bd8d9bfbe.png)
 
-# if you have old crouton scritps you can save them via tar or cp ie sudo tar -czf bin.tar.gz . or sudo mkdir old sudo cp * old
+# if you have old crouton scripts you can save them via tar or cp ie sudo tar -czf bin.tar.gz . or sudo mkdir old sudo cp * old
 # your usr/local/bin should only have 2 files test5 and mnt.sh
 ![shot-2023-01-02_22-38-18](https://user-images.githubusercontent.com/120763310/210311183-94201e13-1f0e-4f69-9ce2-55fb0d30720c.jpg)
 
