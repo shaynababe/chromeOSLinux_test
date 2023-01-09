@@ -919,6 +919,37 @@ gcc -g -Wall -Werror -Wno-error=unused-function -Os -shared -fPIC src/freon.c -l
 └── [Jan  3 09:27]  tree.txt
 
 41 directories, 508 files
+
+
+z@m900:~$ chromeOSLinux Xserver evulation via chrome ssh -XC z$ip  
+z@m900:~$ google-chrome-stable&
+[2] 2784360
+[1]   Done                    google-chrome-stable
+z@m900:~$ MESA-INTEL: warning: Performance support disabled, consider sysctl dev.i915.perf_stream_paranoid=0
+
+MESA-INTEL: warning: Performance support disabled, consider sysctl dev.i915.perf_stream_paranoid=0
+
+libva error: vaGetDriverNameByIndex() failed with unknown libva error, driver_name = (null)
+[2784410:2784410:0108/193148.640912:ERROR:gpu_memory_buffer_support_x11.cc(44)] dri3 extension not supported.
+vulkan: No DRI3 support detected - required for presentation
+Note: you can probably enable DRI3 in your Xorg config
+[2784410:2784410:0108/193149.140458:ERROR:skia_output_device_vulkan.cc(285)] Failed to initialize vulkan surface.
+vulkan: No DRI3 support detected - required for presentation
+Note: you can probably enable DRI3 in your Xorg config
+[2784410:2784410:0108/193149.170949:ERROR:skia_output_device_vulkan.cc(285)] Failed to initialize vulkan surface.
+[2784410:2784410:0108/193647.240379:ERROR:gl_utils.cc(319)] [.RendererMainThread-0x13a80345f800]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+[2784410:2784410:0108/193647.245581:ERROR:gl_utils.cc(319)] [.RendererMainThread-0x13a80345f800]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+
+z@m900:~$ 
+z@m900:~$ [2784410:2784410:0108/235503.673837:ERROR:gl_utils.cc(319)] [.RendererMainThread-0x13a804db2200]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+[2784410:2784410:0108/235503.678547:ERROR:gl_utils.cc(319)] [.RendererMainThread-0x13a804db2200]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels (this message will no longer repeat)
+[2784360:2784360:0108/235637.889717:ERROR:interface_endpoint_client.cc(694)] Message 1 rejected by interface blink.mojom.WidgetHost
+[2784360:2784360:0108/235637.889847:ERROR:interface_endpoint_client.cc(694)] Message 1 rejected by interface blink.mojom.WidgetHost
+
+z@m900:~$ 
+z@m900:~$ 
+z@m900:~$ [2784360:2784360:0109/052730.235806:ERROR:interface_endpoint_client.cc(694)] Message 1 rejected by interface blink.mojom.WidgetHost
+[2784360:2784360:0109/052924.503612:ERROR:interface_endpoint_client.cc(694)] Message 1 rejected by interface blink.mojom.WidgetHost
 ```
 ![Screenshot_2022-12-17_16-15-50](https://user-images.githubusercontent.com/120763310/208271097-bbf981fb-0b3b-4db7-838d-ebebbc63adfa.png)
 ![Screenshot_2022-12-17_08-02-55](https://user-images.githubusercontent.com/120763310/208250812-35026e0b-325b-40c1-8a1a-02757bf6e682.png)
