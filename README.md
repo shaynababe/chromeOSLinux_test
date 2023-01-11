@@ -175,12 +175,18 @@ README.md  chroot-bin                          host-bin     kernel
 chroot-bin/brightness 
 chroot-bin/chromeOSLinux-noroot 
 chroot-bin/chromeOSLinux-unity-autostart 
-chroot-bin/chromeOSLinuxclip chroot-bin/chromeOSLinuxcycle 
-chroot-bin/chromeOSLinuxfindnacl chroot-bin/chromeOSLinuxlhandler 
-chroot-bin/chromeOSLinuxnotify chroot-bin/chromeOSLinuxpowerd 
-chroot-bin/chromeOSLinuxtriggerd chroot-bin/chromeOSLinuxversion 
-chroot-bin/chromeOSLinuxxinitrc-wrapper chroot-bin/crouton-noroot
- 
+chroot-bin/chromeOSLinuxclip 
+chroot-bin/chromeOSLinuxcycle 
+chroot-bin/chromeOSLinuxfindnacl 
+chroot-bin/chromeOSLinuxlhandler 
+chroot-bin/chromeOSLinuxnotify 
+chroot-bin/chromeOSLinuxpowerd 
+chroot-bin/chromeOSLinuxtriggerd 
+chroot-bin/chromeOSLinuxversion 
+chroot-bin/chromeOSLinuxxinitrc-wrapper 
+
+
+chroot-bin/crouton-noroot
 chroot-bin/crouton-unity-autostart 
 chroot-bin/croutonclip chroot-bin/croutoncycle 
 chroot-bin/croutonfindnacl chroot-bin/croutonnotify 
