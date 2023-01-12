@@ -1,6 +1,5 @@
 
-![](https://github.com/user/banner.png) 
-https://github.com/shaynababe/chromeOSLinux_test/blob/main/banner.png
+![](https://github.com/shaynababe/chromeOSLinux_test/blob/main/banner.png) 
 
 ### SystemD is running on winky Debian bullseye due boot
 ![Screenshot_2023-01-11_16-37-43](https://user-images.githubusercontent.com/120763310/211948727-101c161a-1c4a-45b4-8d22-aa4174267fdc.png)
