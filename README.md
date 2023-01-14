@@ -4,6 +4,7 @@
 ### SystemD is running on winky Debian bullseye duel boot chromeOS audio works non-free firmware-intel-sound installed outstanding audio
 ![Screenshot_2023-01-11_16-37-43](https://user-images.githubusercontent.com/120763310/211948727-101c161a-1c4a-45b4-8d22-aa4174267fdc.png)
 chromeOS
+images.githubusercontent.com/120763310/212456727-55c783cc-30e2-4b45-9cb7-4f3b28bc9c7d.png)
 ![Screenshot 2023-01-11 7 56 53 PM](https://user-images.githubusercontent.com/120763310/211972448-dab0a8c3-a323-40fd-ab69-500d1617fb74.png)
 
 
@@ -30,8 +31,7 @@ chromeOS
 # release default bullseye 
 
 # test5 -p /home/SD/z/ -r bullseye -t xorg,xiwi,xfce -n bull
-## you have install curl and org-dev for debootstrap/compile to work ![Screenshot from 2023-01-13 20-59-55](https://user-images.githubusercontent.com/120763310/212456727-55c783cc-30e2-4b45-9cb7-4f3b28bc9c7d.png)
-
+## you have install curl and org-dev for debootstrap/compile to work ![Screenshot from 2023-01-13 20-59-55](https://user
 ## sudo apt install curl
 ## With this release test5 is namespaced for chromeOSLinux for task and builds in  /usr/local/bin for your local machine you need to have read write to run make all, in you test5 chroot cmd
 # git clone https://github.com/shaynababe/chromeOSLinux_test
