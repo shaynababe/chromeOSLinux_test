@@ -30,7 +30,7 @@ chromeOS
 # release default bullseye 
 
 # test5 -p /home/SD/z/ -r bullseye -t xorg,xiwi,xfce -n bull
-## you have install curl for debootstrap to work 
+## you have install curl and org-dev for debootstrap/compile to work 
 ## sudo apt install curl
 ## With this release test5 is namespaced for chromeOSLinux for task and builds in  /usr/local/bin for your local machine you need to have read write to run make all, in you test5 chroot cmd
 # git clone https://github.com/shaynababe/chromeOSLinux_test
