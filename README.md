@@ -4,7 +4,7 @@
 ### SystemD is running on winky Debian bullseye duel boot chromeOS audio works non-free firmware-intel-sound installed outstanding audio
 ![Screenshot_2023-01-11_16-37-43](https://user-images.githubusercontent.com/120763310/211948727-101c161a-1c4a-45b4-8d22-aa4174267fdc.png)
 
-on to coreboot flash rom 
+## on to coreboot flash rom 
 ![Screenshot from 2023-01-14 21-26-28](https://user-images.githubusercontent.com/120763310/212524376-45e47be1-20f1-46d8-ba82-ae90fe4791c6.png)
 
 ### systemd user namespaced Proc 20, no chroot yet
