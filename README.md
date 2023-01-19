@@ -10,6 +10,23 @@ flashrom is complete now building kernals for audio and video RT prenup
 ## The Kernel Process is doing well  this takes some time Chroot does not use Grub howver initramFS and new kernel can be loaded
 ## Linux winky 6.0.12 #1 SMP PREEMPT_DYNAMIC Thu Jan 19 11:37:18 PST 2023 x86_64 The programs included with the Debian GNU/Linux system are free software; the exact distribution terms for each program are described in the individual files in /usr/share/doc/*/copyright. Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent permitted by applicable law Last login: Thu Jan 19 13:18:25 2023 from 10.0.0.205
 
+# chroot via test5a1
+# Linux localhost 4.19.254-13932-g2e3f6d2d3a4d #1 SMP PREEMPT Tue Jan 3 19:29:47 PST 2023 aarch64
+```bash
+The programs included with the Debian GNU/Linux system are free software;
+the exact distribution terms for each program are described in the
+individual files in /usr/share/doc/*/copyright.
+
+Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
+permitted by applicable law.
+(bull5a)z@localhost:~$ cd /boot
+(bull5a)z@localhost:/boot$ ls
+System.map-6.0.0-0.deb11.6-rt-arm64  initrd.img-6.0.0-0.deb11.6-rt-arm64
+System.map-6.0.12-custom             initrd.img-6.0.12-custom
+config-6.0.0-0.deb11.6-rt-arm64      vmlinuz-6.0.0-0.deb11.6-rt-arm64
+config-6.0.12-custom                 vmlinuz-6.0.12-custom
+(bull5a)z@localhost:/boot$ 
+```
 ## Linux m900 6.0.12 #1 SMP PREEMPT_DYNAMIC Thu Jan 19 08:42:15 PST 2023 x86_64
 ![Screenshot_2023-01-19_03-34-59](https://user-images.githubusercontent.com/120763310/213517360-d609911d-aa1b-4c63-8189-97e660db332c.png)
 
