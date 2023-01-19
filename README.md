@@ -7,7 +7,8 @@
 flashrom is complete now building kernals for audio and video RT prenup
 ![Screenshot_2023-01-16_17-17-44](https://user-images.githubusercontent.com/120763310/212789230-202c3aae-4054-45ff-9893-749412c6d61d.png)
 
-##The Kernel Process is doing well  this takes some time Chroot does not use Grub howver initramFS and new kernel can be loaded
+## The Kernel Process is doing well  this takes some time Chroot does not use Grub howver initramFS and new kernel can be loaded
+## Linux m900 6.0.12 #1 SMP PREEMPT_DYNAMIC Thu Jan 19 08:42:15 PST 2023 x86_64
 ![Screenshot_2023-01-19_03-34-59](https://user-images.githubusercontent.com/120763310/213517360-d609911d-aa1b-4c63-8189-97e660db332c.png)
 
 ## on to coreboot flash rom 
