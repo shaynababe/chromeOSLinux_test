@@ -7,6 +7,8 @@
 flashrom is complete now building kernals for audio and video RT prenup
 ![Screenshot_2023-01-16_17-17-44](https://user-images.githubusercontent.com/120763310/212789230-202c3aae-4054-45ff-9893-749412c6d61d.png)
 
+##The Kernel Process is doing well  this takes some time Chroot does not use Grub howver initramFS and new kernel can be loaded
+![Screenshot_2023-01-19_03-34-59](https://user-images.githubusercontent.com/120763310/213517360-d609911d-aa1b-4c63-8189-97e660db332c.png)
 
 ## on to coreboot flash rom 
 ![Screenshot from 2023-01-14 21-26-28](https://user-images.githubusercontent.com/120763310/212524376-45e47be1-20f1-46d8-ba82-ae90fe4791c6.png)
