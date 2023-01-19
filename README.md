@@ -21,7 +21,8 @@ Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
 permitted by applicable law.
 Last login: Thu Jan 19 09:54:28 2023 from 10.0.0.12
 z@winky:~$ cat /proc/version
-Linux version 6.0.0-6-rt-amd64 (debian-kernel@lists.debian.org) (gcc-12 (Debian 12.2.0-9.1) 12.2.0, GNU ld (GNU Binutils for Debian) 2.39) #1 SMP PREEMPT_RT Debian 6.0.12-1 (2022-12-09)
+Linux version 6.0.0-6-rt-amd64 (debian-kernel@lists.debian.org) (gcc-12 (Debian 12.2.0-9.1) 12.2.0,
+GNU ld (GNU Binutils for Debian) 2.39) #1 SMP PREEMPT_RT Debian 6.0.12-1 (2022-12-09)
 
 The programs included with the Debian GNU/Linux system are free software;
 the exact distribution terms for each program are described in the individual files in /usr/share/doc/*/copyright. 
@@ -31,7 +32,10 @@ to the extent permitted by applicable law Last login: Thu Jan 19 13:18:25 2023 f
 # chroot via test5a1
 # Linux localhost 4.19.254-13932-g2e3f6d2d3a4d #1 SMP PREEMPT Tue Jan 3 19:29:47 PST 2023 aarch64
 ```bash
-Linux version 4.19.261-13932-g2e3f6d2d3a4d (chrome-bot@chromeos-release-builder-us-central1-b-x32-25-v078) (Chromium OS 15.0_pre465103_p20220825-r3 clang version 15.0.0 (/var/tmp/portage/sys-devel/llvm-15.0_pre465103_p20220825-r3/work/llvm-15.0_pre465103_p20220825/clang db1978b67431ca3462ad8935bf662c15750b8252)) #1 SMP PREEMPT Tue Jan 3 19:29:47 PST 2023
+Linux version 4.19.261-13932-g2e3f6d2d3a4d (chrome-bot@chromeos-release-builder-us-central1-b-x32-25-v078) 
+(Chromium OS 15.0_pre465103_p20220825-r3 clang version 15.0.0 
+(/var/tmp/portage/sys-devel/llvm-15.0_pre465103_p20220825-r3/work/llvm-15.0_pre465103_p20220825/clang db1978b67431ca3462ad8935bf662c15750b8252)
+) #1 SMP PREEMPT Tue Jan 3 19:29:47 PST 2023
 
 The programs included with the Debian GNU/Linux system are free software;
 the exact distribution terms for each program are described in the
