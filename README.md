@@ -11,6 +11,18 @@ flashrom is complete now building kernals for audio and video RT prenup
 ## Linux winky 6.0.12 #1 SMP PREEMPT_DYNAMIC Thu Jan 19 11:37:18 PST 2023 x86_64 
 
 ```bash
+Linux winky 6.0.0-6-rt-amd64 #1 SMP PREEMPT_RT Debian 6.0.12-1 (2022-12-09) x86_64
+
+The programs included with the Debian GNU/Linux system are free software;
+the exact distribution terms for each program are described in the
+individual files in /usr/share/doc/*/copyright.
+
+Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
+permitted by applicable law.
+Last login: Thu Jan 19 09:54:28 2023 from 10.0.0.12
+z@winky:~$ cat /proc/version
+Linux version 6.0.0-6-rt-amd64 (debian-kernel@lists.debian.org) (gcc-12 (Debian 12.2.0-9.1) 12.2.0, GNU ld (GNU Binutils for Debian) 2.39) #1 SMP PREEMPT_RT Debian 6.0.12-1 (2022-12-09)
+
 The programs included with the Debian GNU/Linux system are free software;
 the exact distribution terms for each program are described in the individual files in /usr/share/doc/*/copyright. 
 Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, 
