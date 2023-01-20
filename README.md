@@ -9,7 +9,7 @@ flashrom is complete now building kernals for audio and video RT prenup
 
 ## The Kernel Process is doing well  this takes some time Chroot does not use Grub however initramFS and new kernel can be loaded, chrot no boot no init or systemd no wonder the lastest Xorg server fails Bookworm Kali jammy 
 
-## Linux version 4.19.261-13932-g2e3f6d2d3a4d 
+## Linux localhost 4.19.254-13932-g2e3f6d2d3a4d #1 SMP PREEMPT Tue Jan 3 19:29:47 PST 2023 aarch64
 ## Linux m900 6.0.12 #1 SMP PREEMPT_DYNAMIC Thu Jan 19 08:42:15 PST 2023 x86_64
 ## Linux winky 6.0.12 #1 SMP PREEMPT_DYNAMIC Thu Jan 19 11:37:18 PST 2023 x86_64 
 
