@@ -7,7 +7,11 @@
 flashrom is complete now building kernals for audio and video RT prenup
 ![Screenshot_2023-01-16_17-17-44](https://user-images.githubusercontent.com/120763310/212789230-202c3aae-4054-45ff-9893-749412c6d61d.png)
 
-## The Kernel Process is doing well  this takes some time Chroot does not use Grub howver initramFS and new kernel can be loaded
+## The Kernel Process is doing well  this takes some time Chroot does not use Grub however initramFS and new kernel can be loaded, chrot no boot no init or systemd no wonder the lastest Xorg server fails Bookworm Kali 
+
+## jammy Linux version 4.19.261-13932-g2e3f6d2d3a4d 
+
+## Linux m900 6.0.12 #1 SMP PREEMPT_DYNAMIC Thu Jan 19 08:42:15 PST 2023 x86_64
 ## Linux winky 6.0.12 #1 SMP PREEMPT_DYNAMIC Thu Jan 19 11:37:18 PST 2023 x86_64 
 
 ```bash
@@ -34,8 +38,9 @@ to the extent permitted by applicable law Last login: Thu Jan 19 13:18:25 2023 f
 ```bash
 Linux version 4.19.261-13932-g2e3f6d2d3a4d (chrome-bot@chromeos-release-builder-us-central1-b-x32-25-v078) 
 (Chromium OS 15.0_pre465103_p20220825-r3 clang version 15.0.0 
-(/var/tmp/portage/sys-devel/llvm-15.0_pre465103_p20220825-r3/work/llvm-15.0_pre465103_p20220825/clang db1978b67431ca3462ad8935bf662c15750b8252)
-) #1 SMP PREEMPT Tue Jan 3 19:29:47 PST 2023
+(/var/tmp/portage/sys-devel/llvm-15.0_pre465103_p20220825-r3/work/llvm-15.0_pre465103_p20220825
+/clang db1978b67431ca3462ad8935bf662c15750b8252)) 
+#1 SMP PREEMPT Tue Jan 3 19:29:47 PST 2023
 
 The programs included with the Debian GNU/Linux system are free software;
 the exact distribution terms for each program are described in the
