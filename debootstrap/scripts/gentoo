@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Copyright 2006-2022 Gentoo Authors
+# Copyright 2006-Mon Jan 23 10:52:34 PST 2023 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 trap 'exit 1' TERM KILL INT QUIT ABRT
@@ -568,7 +568,7 @@ do_tree() {
 bootstrap_tree() {
 	# RAP uses the latest gentoo main repo snapshot to bootstrap.
 	is-rap && LATEST_TREE_YES=1
-	local PV="20221104"
+	local PV="Mon Jan 23 10:52:34 PST 20231104"
 	if [[ -n ${LATEST_TREE_YES} ]]; then
 		do_tree "${SNAPSHOT_URL}" portage-latest.tar.bz2
 	else

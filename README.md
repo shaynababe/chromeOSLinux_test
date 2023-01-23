@@ -30,7 +30,7 @@ chronos@localhost /usr/local/bin/run/crw $ more core_pattern
 |/sbin/crash_reporter --user=%P:%s:%u:%g:%f
 chronos@localhost /usr/local/bin/run/crw $ sudo more crw
 #!/bin/bash -e
-# Copyright (c) 2022 The chromeOSLinux Authors. All rights reserved.
+# Copyright (c) Mon Jan 23 10:52:34 PST 2023 The chromeOSLinux Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -84,7 +84,7 @@ flashrom is complete now building kernals for audio and video RT prenup
 ## Linux winky 6.0.12 #1 SMP PREEMPT_DYNAMIC Thu Jan 19 11:37:18 PST 2023 x86_64 
 
 ```bash
-Linux winky 6.0.0-6-rt-amd64 #1 SMP PREEMPT_RT Debian 6.0.12-1 (2022-12-09) x86_64
+Linux winky 6.0.0-6-rt-amd64 #1 SMP PREEMPT_RT Debian 6.0.12-1 (Mon Jan 23 10:52:34 PST 2023-12-09) x86_64
 
 The programs included with the Debian GNU/Linux system are free software;
 the exact distribution terms for each program are described in the
@@ -95,7 +95,7 @@ permitted by applicable law.
 Last login: Thu Jan 19 09:54:28 2023 from 10.0.0.12
 z@winky:~$ cat /proc/version
 Linux version 6.0.0-6-rt-amd64 (debian-kernel@lists.debian.org) (gcc-12 (Debian 12.2.0-9.1) 12.2.0,
-GNU ld (GNU Binutils for Debian) 2.39) #1 SMP PREEMPT_RT Debian 6.0.12-1 (2022-12-09)
+GNU ld (GNU Binutils for Debian) 2.39) #1 SMP PREEMPT_RT Debian 6.0.12-1 (Mon Jan 23 10:52:34 PST 2023-12-09)
 
 The programs included with the Debian GNU/Linux system are free software;
 the exact distribution terms for each program are described in the individual files in /usr/share/doc/*/copyright. 
@@ -106,8 +106,8 @@ to the extent permitted by applicable law Last login: Thu Jan 19 13:18:25 2023 f
 # Linux localhost 4.19.254-13932-g2e3f6d2d3a4d #1 SMP PREEMPT Tue Jan 3 19:29:47 PST 2023 aarch64
 ```bash
 Linux version 4.19.261-13932-g2e3f6d2d3a4d (chrome-bot@chromeos-release-builder-us-central1-b-x32-25-v078) 
-(Chromium OS 15.0_pre465103_p20220825-r3 clang version 15.0.0 
-(/var/tmp/portage/sys-devel/llvm-15.0_pre465103_p20220825-r3/work/llvm-15.0_pre465103_p20220825
+(Chromium OS 15.0_pre465103_pMon Jan 23 10:52:34 PST 20230825-r3 clang version 15.0.0 
+(/var/tmp/portage/sys-devel/llvm-15.0_pre465103_pMon Jan 23 10:52:34 PST 20230825-r3/work/llvm-15.0_pre465103_pMon Jan 23 10:52:34 PST 20230825
 /clang db1978b67431ca3462ad8935bf662c15750b8252)) 
 #1 SMP PREEMPT Tue Jan 3 19:29:47 PST 2023
 
@@ -237,7 +237,7 @@ chronos@localhost /usr/local/bin $
 ## if you wish to view the activity start a new shell and cd /usr/local/bin
 ## you can ls -la to watch the install process 
 
-![Screenshot_2022-12-19_13-48-13](https://user-images.githubusercontent.com/120763310/208530702-a211e371-ba0f-4329-b5d7-433041ba63ad.png)
+![Screenshot_Mon Jan 23 10:52:34 PST 2023-12-19_13-48-13](https://user-images.githubusercontent.com/120763310/208530702-a211e371-ba0f-4329-b5d7-433041ba63ad.png)
 
 ```bash
 chronos@localhost /usr/local/bin $ sudo test5
@@ -358,7 +358,7 @@ remote: Resolving deltas: 100% (33/33), done.
 To https://github.com/shynababe/chromeOSLinux_test.git
    f08039a..56a040a  main -> main
 (bull3)z@localhost:~/crouton_Penguin/chromeOSLinux_test$ ls   
-AUTHORS    Screenshot_2022-12-17_08-02-55.png  chroot-etc   host-ext   src
+AUTHORS    Screenshot_Mon Jan 23 10:52:34 PST 2023-12-17_08-02-55.png  chroot-etc   host-ext   src
 Makefile   build                               debootstrap  installer  targets
 README.md  chroot-bin                          host-bin     kernel
 ```
@@ -545,7 +545,7 @@ Preparing bootstrap dependencies for installer/ubuntu/bootstrap
 Patching debootstrap... # test5patches debootstrap to use curl for some activities because Chosh does not use apt-get but curl works
 { \
 	sed -e "s/\$TARPARAMS/-j/" \
-		-e "s/VERSION=.*/VERSION='1-20221219121458~main:56a040a8'/" \ # it sets a version for the build
+		-e "s/VERSION=.*/VERSION='1-Mon Jan 23 10:52:34 PST 20231219121458~main:56a040a8'/" \ # it sets a version for the build
 		build/wrapper.sh \
 	&& (cd chromeOSLinux.build && tar --owner=root --group=root -c -j *)\ assign root and owner and group 
 	&& chmod +x /dev/stdout \
@@ -570,7 +570,7 @@ gcc -g -Wall -Werror -Wno-error=unused-function -Os -shared -fPIC src/freon.c -l
 .
 ├── [Jan  2 14:20]  AUTHORS
 ├── [Jan  2 14:20]  banner.png
-├── [Jan  2 14:20]  Screenshot_2022-12-17_08-02-55.png
+├── [Jan  2 14:20]  Screenshot_Mon Jan 23 10:52:34 PST 2023-12-17_08-02-55.png
 ├── [Jan  2 14:20]  chroot-etc
 │   ├── [Jan  2 14:20]  chroot-etc-pam-d
 │   │   └── [Jan  2 14:20]  su-l
@@ -1152,8 +1152,8 @@ z@m900:~$ [2784360:2784360:0109/052730.235806:ERROR:interface_endpoint_client.cc
 [2784360:2784360:0109/052924.503612:ERROR:interface_endpoint_client.cc(694)] Message 1 rejected by interface blink.mojom.WidgetHost
 ```
 ![Screenshot_2023-01-09_06-05-18](https://user-images.githubusercontent.com/120763310/211326691-55abd9bc-65de-4341-b42d-99617f79a60c.png)
-![Screenshot_2022-12-17_16-15-50](https://user-images.githubusercontent.com/120763310/208271097-bbf981fb-0b3b-4db7-838d-ebebbc63adfa.png)
-![Screenshot_2022-12-17_08-02-55](https://user-images.githubusercontent.com/120763310/208250812-35026e0b-325b-40c1-8a1a-02757bf6e682.png)
+![Screenshot_Mon Jan 23 10:52:34 PST 2023-12-17_16-15-50](https://user-images.githubusercontent.com/120763310/208271097-bbf981fb-0b3b-4db7-838d-ebebbc63adfa.png)
+![Screenshot_Mon Jan 23 10:52:34 PST 2023-12-17_08-02-55](https://user-images.githubusercontent.com/120763310/208250812-35026e0b-325b-40c1-8a1a-02757bf6e682.png)
 # chromeOSlinux_test
 my attempt at RPM chromebook install with Cras and Xorg with new kernels
-![Screenshot_2022-12-17_08-13-54](https://user-images.githubusercontent.com/120763310/208251214-39e7a7f1-c86a-482d-9710-a92222bd118f.png)
+![Screenshot_Mon Jan 23 10:52:34 PST 2023-12-17_08-13-54](https://user-images.githubusercontent.com/120763310/208251214-39e7a7f1-c86a-482d-9710-a92222bd118f.png)
