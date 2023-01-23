@@ -175,6 +175,63 @@ config-6.0.12-custom                 vmlinuz-6.0.12-custom
 ## then the sudo test5--help will show the cmds to get chroot installed
 
 ## IE sudo test5 -p /home/SD/z/ -r bullseye -t xorg,xiwi,xfce -n bull 
+#  New Targets
+```bash
+Available targets:
+audio
+        Support audio playback via Chromium OS's audio system.
+        Requires: core
+chromium
+        Chromium browser. Uses the distro's version, which may be old.
+        Requires: x11
+cli-extra
+        Basic CLI tools such as ssh.
+        Requires: core
+core
+        Performs core system configuration. Most users would want this.
+enlightenment
+        Installs the enlightenment desktop environment.
+        Requires: gtk-extra
+extension
+        Clipboard synchronization and URL handling with Chromium OS.
+        Requires: x11
+gnome
+        Installs the GNOME desktop environment.
+gtk-extra
+        gtk-3 based tools
+        Requires: x11
+kde
+        Installs a minimal KDE desktop environment. (Approx. 600MB)
+keyboard
+        Adds support for Chromebook keyboard special keys.
+        Requires: x11
+kodi
+        Installs the KODI media player. (Approx. 200MB)
+        Requires: x11
+lxde
+        Installs the LXDE desktop environment. (Approx. 200MB)
+mate
+        Installs the mate desktop environment. (Approx. 250MB)
+openoffice
+        Libreoffice.
+tools
+        tools
+touch
+        Touchscreen and dev support.
+        Requires: x11
+x11
+        X11 via autodetected backend. Does not install any desktop environment.
+xfce
+        Installs the Xfce desktop environment.
+xiwi
+        X.org X11 backend running unaccelerated in a Chromium OS window.
+        Requires: audio extension
+xorg
+        X.Org X11 backend. Enables GPU acceleration on supported platforms.
+        Requires: audio
+chronos@localhost /usr/local/bin $ 
+``
+`
 
 #will work 
 ## if you wish to view the activity start a new shell and cd /usr/local/bin
