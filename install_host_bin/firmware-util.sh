@@ -23,7 +23,7 @@ if grep -q "Chrom" /etc/lsb-release ; then
 	mkdir -p /usr/local/bin
 	cd /usr/local/bin
 else
-	cd /tmp
+	cd /usr/local/bin
 fi
 
 #check for cmd line param, expired CrOS certs
@@ -54,7 +54,7 @@ source ./firmware.sh
 source ./functions.sh
 
 #set working dir
-cd /tmp
+cd /usr/local/bin
 
 #do setup stuff
 prelim_setup || exit 1
