@@ -2,6 +2,8 @@
 ![](https://github.com/shaynababe/chromeOSLinux_test/blob/main/banner.png) 
 
 ### SystemD is running on winky Debian bullseye duel boot chromeOS audio works non-free firmware-intel-sound installed outstanding audio
+![Screenshot_2023-01-11_16-37-43](https://user-images.githubusercontent.com/120763310/211948727-101c161a-1c4a-45b4-8d22-aa4174267fdc.png)
+
 ```bash
 0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
 Please specify a username for the primary user: z
@@ -22,7 +24,6 @@ See "man sudo_root" for details.
 # WARNING: Unable to register core dump handler.
 ```
 
-![Screenshot_2023-01-11_16-37-43](https://user-images.githubusercontent.com/120763310/211948727-101c161a-1c4a-45b4-8d22-aa4174267fdc.png)
 
 flashrom is complete now building kernals for audio and video RT prenup
 ![Screenshot_2023-01-16_17-17-44](https://user-images.githubusercontent.com/120763310/212789230-202c3aae-4054-45ff-9893-749412c6d61d.png)
