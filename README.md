@@ -174,7 +174,7 @@ config-6.0.12-custom                 vmlinuz-6.0.12-custom
 
 ## then the sudo test5--help will show the cmds to get chroot installed
 
-## IE sudo test5-p /home/SD/z/ -r bullseye -t xorg,xiwi,xfce -n bull 
+## IE sudo test5 -p /home/SD/z/ -r bullseye -t xorg,xiwi,xfce -n bull 
 
 #will work 
 ## if you wish to view the activity start a new shell and cd /usr/local/bin
