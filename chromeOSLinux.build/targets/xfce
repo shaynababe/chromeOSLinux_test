@@ -1,0 +1,13 @@
+#!/bin/bash -e
+# Copyright (c) 2022 The chromeOSLinux Authors. All rights reserved.
+# Use of this source code is governed by a BSD-style license that can be
+# found in the LICENSE file.
+DESCRIPTION='Installs the Xfce desktop environment.'
+HOSTBIN='startxfce4'
+CHROOTBIN='chromeOSLinux-noroot startxfce4'
+. "${TARGETSDIR:="$PWD"}/common"
+
+install xfce4 xfce4-goodies dbus-x11 gvfs*
+TIPS="$TIPS
+You can start Xfce via the startxfce4 host command: sudo startxfce4
+ 
