@@ -383,8 +383,10 @@ chroot-bin/chromeOSLinuxxinitrc-wrapper
 
 chroot-bin/crouton-noroot
 chroot-bin/crouton-unity-autostart 
-chroot-bin/croutonclip chroot-bin/croutoncycle 
-chroot-bin/croutonfindnacl chroot-bin/croutonnotify 
+chroot-bin/croutonclip 
+chroot-bin/croutoncycle 
+chroot-bin/croutonfindnacl 
+chroot-bin/croutonnotify 
 chroot-bin/croutonpowerd 
 chroot-bin/croutontriggerd 
 chroot-bin/croutonurlhandler 
@@ -402,7 +404,8 @@ chroot-bin/startunity
 chroot-bin/startxfce4 
 chroot-bin/volume 
 chroot-bin/xinit 
-chroot-bin/xiwi chroot-bin/z 
+chroot-bin/xiwi 
+chroot-bin/z 
 
 chroot-etc/chroot-etc-pam-d 
 chroot-etc/kodi-cycle.py 
@@ -417,7 +420,7 @@ chroot-etc/xorg-intel-sna.conf
 chroot-etc/xserverrc 
 chroot-etc/xserverrc-local.example 
 chroot-etc/xserverrc-xiwi 
-chroot-etc/xserverrc-xorg \
+chroot-etc/xserverrc-xorg 
 
 # && cp -Lprt chromeOSLinux.build --parents 
 
