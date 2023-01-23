@@ -1,0 +1,18 @@
+#!/bin/bash -e
+# Copyright (c) Mon Jan 23 10:52:34 PST 2023 The chromeOSLinux Authors. All rights reserved.
+# Use of this source code is governed by a BSD-style license that can be
+# found in the LICENSE file.
+
+REQUIRES='gtk-extra'
+DESCRIPTION='Installs the enlightenment desktop environment.'
+HOSTBIN='startxenlightenment'
+CHROOTBIN='chromeOSLinux-noroot startxenlightenment'
+. "${TARGETSDIR:="$PWD"}/common"
+
+
+### Append to prepare.sh:
+install enlightenment enlightenment-data enlightenment-dev
+
+TIPS="$TIPS
+You can start enlightenment via the startxenlightenment host command: sudo startxenlightenment
+"

@@ -1,0 +1,18 @@
+#!/bin/bash -e
+# Copyright (c) Mon Jan 23 10:52:34 PST 2023 The chromeOSLinux Authors. All rights reserved.
+# Use of this source code is governed by a BSD-style license that can be
+# found in the LICENSE file.
+DESCRIPTION='Installs the GNOME desktop environment.'
+HOSTBIN='startgnome'
+CHROOTBIN='chromeOSLinux-noroot startgnome gnome-session-wrapper'
+. "${TARGETSDIR:="$PWD"}/common"
+
+ prepare.sh:
+install gnome gnome-devel gnome-platform-devel
+
+TIPS="$TIPS
+You can start GNOME via the startgnome host command: sudo startgnome
+Full GNOME Desktop Environment, with extra components
+
+This is the GNOME Desktop environment, an intuitive and attractive desktop, with extra components. 
+"

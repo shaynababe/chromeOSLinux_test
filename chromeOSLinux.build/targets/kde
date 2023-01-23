@@ -1,0 +1,14 @@
+#!/bin/bash -e
+# Copyright (c) Mon Jan 23 10:52:34 PST 2023 The chromeOSLinux Authors. All rights reserved.
+# Use of this source code is governed by a BSD-style license that can be
+# found in the LICENSE file.
+DESCRIPTION='Installs a minimal KDE desktop environment. (Approx. 600MB)'
+HOSTBIN='startkde'
+CHROOTBIN='chromeOSLinux-noroot startkde'
+. "${TARGETSDIR:="$PWD"}/common"
+### Append to prepare.sh:
+install plasma-workspace plasma-workspace-dev plasma-workspace-data plasma-workspace-wayland
+
+TIPS="$TIPS
+You can start KDE via the startkde host command: sudo startkde
+"
