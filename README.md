@@ -17,7 +17,7 @@ See "man sudo_root" for details.
 ```
 # this is gone
 #  Entering /mnt/stateful_partition/crouton/chroots/xenial...
-/usr/local/bin/crash_reporter_wrapper: 119: exec: /var/run/crw/crw: Permission denied
+# /usr/local/bin/crash_reporter_wrapper: 119: exec: /var/run/crw/crw: Permission denied
 # WARNING: Unable to register core dump handler.
 
 ![Screenshot_2023-01-11_16-37-43](https://user-images.githubusercontent.com/120763310/211948727-101c161a-1c4a-45b4-8d22-aa4174267fdc.png)
