@@ -21,6 +21,50 @@ chronos@localhost /usr/local/bin $ sudo enter-chroot -c /home/SD/5/chroots/ -n x
 Entering /home/SD/5/chroots/xen5...
 To run a command as administrator (user "root"), use "sudo <command>".
 See "man sudo_root" for details.
+
+chronos@localhost /usr/local/bin/run/crw $ ls
+core_pattern  crw
+chronos@localhost /usr/local/bin/run/crw $ pwd
+/usr/local/bin/run/crw
+chronos@localhost /usr/local/bin/run/crw $ more core_pattern
+|/sbin/crash_reporter --user=%P:%s:%u:%g:%f
+chronos@localhost /usr/local/bin/run/crw $ sudo more crw
+#!/bin/bash -e
+# Copyright (c) 2022 The chromeOSLinux Authors. All rights reserved.
+# Use of this source code is governed by a BSD-style license that can be
+# found in the LICENSE file.
+
+# When launched from the kernel, PATH is not set and stderr is closed
+if [ ! -t 0 ]; then
+    exec 2>/var/log/crash_reporter_wrapper.log
+    export PATH='/bin:/sbin:/usr/bin:/usr/sbin'
+fi
+
+APPLICATION="${0##*/}"
+CORE_PATTERN_PARAMS='%p %s %u %g %e %h %t %E'
+CORE_PATTERN_PARAMS_COUNT=8
+CORE_PATTERN="|`readlink -f -- "$0"` $CORE_PATTERN_PARAMS"
+CORE_PATTERN_FILE='/usr/local/bin/run/crw/core_pattern'
+CORE_PATTERN_PROC='/proc/sys/kernel/core_pattern'
+DEFAULT_CHROOT_PATTERN=''
+IDEAL_LOCATION='/usr/local/bin/run/crw/crw'
+
+USAGE="$APPLICATION register
+$APPLICATION $CORE_PATTERN_PARAMS
+
+Handles system core dumps, passing the dump through to Chromium OS's
+crash_reporter or processing it as the chroot requests, depending on what
+namespace the process belongs to.
+
+The first form should be run as root, and sets $CORE_PATTERN_PROC
+to use this script as the core dump pipe program.
+
+The second form is expected to be called by the kernel upon program crash, via
+the core_pattern set with the first form. The script checks if the crashing
+PID's root has an /etc/chromeOSLinux/core_pattern and uses that to emulate the
+kernel's handling of the core_pattern proc entry."
+
+
 ```
 # this is gone
 ```bash
