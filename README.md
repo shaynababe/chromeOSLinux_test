@@ -1,9 +1,80 @@
-![](https://github.com/user/banner.png) 
-![banner](https://user-images.githubusercontent.com/120763310/208612080-3d83f547-7416-4276-8927-8e5535b8031d.png)
-# This is not compatible with crouton shell scripts and the new files need to be copied to your crosh shell /usr/local/bin is using this ie .../bin/chroots cp ./bin/* /usr/local/bin
-# test5 has update targets for enlighten WM e7 is now gone also gtk-extra has been update from 2016 or 2023 for gtk3 install
 
-# if you have old crouton scritps you can save them via tar or cp ie sudo tar -czf bin.tar.gz . or sudo mkdir old sudo cp * old
+![](https://github.com/shaynababe/chromeOSLinux_test/blob/main/banner.png) 
+
+### SystemD is running on winky Debian bullseye duel boot chromeOS audio works non-free firmware-intel-sound installed outstanding audio
+![Screenshot_2023-01-11_16-37-43](https://user-images.githubusercontent.com/120763310/211948727-101c161a-1c4a-45b4-8d22-aa4174267fdc.png)
+
+flashrom is complete now building kernals for audio and video RT prenup
+![Screenshot_2023-01-16_17-17-44](https://user-images.githubusercontent.com/120763310/212789230-202c3aae-4054-45ff-9893-749412c6d61d.png)
+
+## The Kernel Process is doing well  this takes some time Chroot does not use Grub however initramFS and new kernel can be loaded, chroot no boot no init or systemd no wonder the lastest Xorg server fails Bookworm Kali jammy 
+
+## Linux localhost 4.19.254-13932-g2e3f6d2d3a4d #1 SMP PREEMPT Tue Jan 3 19:29:47 PST 2023 aarch64
+## Linux m900 6.0.12 #1 SMP PREEMPT_DYNAMIC Thu Jan 19 08:42:15 PST 2023 x86_64
+## Linux winky 6.0.12 #1 SMP PREEMPT_DYNAMIC Thu Jan 19 11:37:18 PST 2023 x86_64 
+
+```bash
+Linux winky 6.0.0-6-rt-amd64 #1 SMP PREEMPT_RT Debian 6.0.12-1 (2022-12-09) x86_64
+
+The programs included with the Debian GNU/Linux system are free software;
+the exact distribution terms for each program are described in the
+individual files in /usr/share/doc/*/copyright.
+
+Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
+permitted by applicable law.
+Last login: Thu Jan 19 09:54:28 2023 from 10.0.0.12
+z@winky:~$ cat /proc/version
+Linux version 6.0.0-6-rt-amd64 (debian-kernel@lists.debian.org) (gcc-12 (Debian 12.2.0-9.1) 12.2.0,
+GNU ld (GNU Binutils for Debian) 2.39) #1 SMP PREEMPT_RT Debian 6.0.12-1 (2022-12-09)
+
+The programs included with the Debian GNU/Linux system are free software;
+the exact distribution terms for each program are described in the individual files in /usr/share/doc/*/copyright. 
+Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, 
+to the extent permitted by applicable law Last login: Thu Jan 19 13:18:25 2023 from 10.0.0.205
+```
+# chroot via test5a1
+# Linux localhost 4.19.254-13932-g2e3f6d2d3a4d #1 SMP PREEMPT Tue Jan 3 19:29:47 PST 2023 aarch64
+```bash
+Linux version 4.19.261-13932-g2e3f6d2d3a4d (chrome-bot@chromeos-release-builder-us-central1-b-x32-25-v078) 
+(Chromium OS 15.0_pre465103_p20220825-r3 clang version 15.0.0 
+(/var/tmp/portage/sys-devel/llvm-15.0_pre465103_p20220825-r3/work/llvm-15.0_pre465103_p20220825
+/clang db1978b67431ca3462ad8935bf662c15750b8252)) 
+#1 SMP PREEMPT Tue Jan 3 19:29:47 PST 2023
+
+The programs included with the Debian GNU/Linux system are free software;
+the exact distribution terms for each program are described in the
+individual files in /usr/share/doc/*/copyright.
+
+Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
+permitted by applicable law.
+(bull5a)z@localhost:~$ cd /boot
+(bull5a)z@localhost:/boot$ ls
+System.map-6.0.0-0.deb11.6-rt-arm64  initrd.img-6.0.0-0.deb11.6-rt-arm64
+System.map-6.0.12-custom             initrd.img-6.0.12-custom
+config-6.0.0-0.deb11.6-rt-arm64      vmlinuz-6.0.0-0.deb11.6-rt-arm64
+config-6.0.12-custom                 vmlinuz-6.0.12-custom
+(bull5a)z@localhost:/boot$ 
+```
+## Linux m900 6.0.12 #1 SMP PREEMPT_DYNAMIC Thu Jan 19 08:42:15 PST 2023 x86_64
+![Screenshot_2023-01-19_03-34-59](https://user-images.githubusercontent.com/120763310/213517360-d609911d-aa1b-4c63-8189-97e660db332c.png)
+
+## on to coreboot flash rom 
+![Screenshot from 2023-01-14 21-26-28](https://user-images.githubusercontent.com/120763310/212524376-45e47be1-20f1-46d8-ba82-ae90fe4791c6.png)
+
+### systemd user namespaced Proc 20, no chroot yet
+![Screenshot from 2023-01-14 08-49-11](https://user-images.githubusercontent.com/120763310/212484713-d5fd6613-6134-40d3-9e2e-5c35dace4588.png)
+
+### ChromeOS initd
+![Screenshot 2023-01-11 7 56 53 PM](https://user-images.githubusercontent.com/120763310/211972448-dab0a8c3-a323-40fd-ab69-500d1617fb74.png)
+
+
+# This is not compatible with crouton shell scripts and the new files need to be copied to your crosh shell /usr/local/bin is using this ie .../bin/chroots cp ./bin/* /usr/local/bin
+# test5 has update targets for enlighten WM e7 is now gone also gtk-extra has been update from 2016 gtk for 2023 gtk3 install
+
+# if a effort to evaluate systemD is now underway it will start with dual boot a chromebook firmware update
+![Screenshot_2023-01-06_11-38-12](https://user-images.githubusercontent.com/120763310/211087399-2ecd86fa-c2af-4625-b062-f41bd8d9bfbe.png)
+
+# if you have old crouton scripts you can save them via tar or cp ie sudo tar -czf bin.tar.gz . or sudo mkdir old sudo cp * old
 # your usr/local/bin should only have 2 files test5 and mnt.sh
 ![shot-2023-01-02_22-38-18](https://user-images.githubusercontent.com/120763310/210311183-94201e13-1f0e-4f69-9ce2-55fb0d30720c.jpg)
 
@@ -17,14 +88,10 @@
 # test5: version 1-20230103082635~main:ab215034
 # chronos@localhost /usr/local/bin $$ 
 
-## I have not decide on a release default yet Focal maybe bullseye is also being considered
+# release default bullseye 
+
 # test5 -p /home/SD/z/ -r bullseye -t xorg,xiwi,xfce -n bull
-
-## With this release test5is namespaced for chromeOSLinux for task and builds in  /usr/local/bin for your local machine you need to have read write to run make all, in you test5 chroot cmd
-=======
-
-## I have not decide on a release default yet Focal maybe bullseye is also being considered
-## you have install curl for debootstrap to work 
+## you have install curl and org-dev for debootstrap/compile to work
 ## sudo apt install curl
 ## With this release test5 is namespaced for chromeOSLinux for task and builds in  /usr/local/bin for your local machine you need to have read write to run make all, in you test5 chroot cmd
 # git clone https://github.com/shaynababe/chromeOSLinux_test
@@ -176,12 +243,18 @@ README.md  chroot-bin                          host-bin     kernel
 chroot-bin/brightness 
 chroot-bin/chromeOSLinux-noroot 
 chroot-bin/chromeOSLinux-unity-autostart 
-chroot-bin/chromeOSLinuxclip chroot-bin/chromeOSLinuxcycle 
-chroot-bin/chromeOSLinuxfindnacl chroot-bin/chromeOSLinuxlhandler 
-chroot-bin/chromeOSLinuxnotify chroot-bin/chromeOSLinuxpowerd 
-chroot-bin/chromeOSLinuxtriggerd chroot-bin/chromeOSLinuxversion 
-chroot-bin/chromeOSLinuxxinitrc-wrapper chroot-bin/crouton-noroot
- 
+chroot-bin/chromeOSLinuxclip 
+chroot-bin/chromeOSLinuxcycle 
+chroot-bin/chromeOSLinuxfindnacl 
+chroot-bin/chromeOSLinuxlhandler 
+chroot-bin/chromeOSLinuxnotify 
+chroot-bin/chromeOSLinuxpowerd 
+chroot-bin/chromeOSLinuxtriggerd 
+chroot-bin/chromeOSLinuxversion 
+chroot-bin/chromeOSLinuxxinitrc-wrapper 
+
+
+chroot-bin/crouton-noroot
 chroot-bin/crouton-unity-autostart 
 chroot-bin/croutonclip chroot-bin/croutoncycle 
 chroot-bin/croutonfindnacl chroot-bin/croutonnotify 
@@ -916,7 +989,39 @@ gcc -g -Wall -Werror -Wno-error=unused-function -Os -shared -fPIC src/freon.c -l
 └── [Jan  3 09:27]  tree.txt
 
 41 directories, 508 files
+
+
+z@m900:~$ chromeOSLinux Xserver evulation via chrome ssh -XC z$ip  
+z@m900:~$ google-chrome-stable&
+[2] 2784360
+[1]   Done                    google-chrome-stable
+z@m900:~$ MESA-INTEL: warning: Performance support disabled, consider sysctl dev.i915.perf_stream_paranoid=0
+
+MESA-INTEL: warning: Performance support disabled, consider sysctl dev.i915.perf_stream_paranoid=0
+
+libva error: vaGetDriverNameByIndex() failed with unknown libva error, driver_name = (null)
+[2784410:2784410:0108/193148.640912:ERROR:gpu_memory_buffer_support_x11.cc(44)] dri3 extension not supported.
+vulkan: No DRI3 support detected - required for presentation
+Note: you can probably enable DRI3 in your Xorg config
+[2784410:2784410:0108/193149.140458:ERROR:skia_output_device_vulkan.cc(285)] Failed to initialize vulkan surface.
+vulkan: No DRI3 support detected - required for presentation
+Note: you can probably enable DRI3 in your Xorg config
+[2784410:2784410:0108/193149.170949:ERROR:skia_output_device_vulkan.cc(285)] Failed to initialize vulkan surface.
+[2784410:2784410:0108/193647.240379:ERROR:gl_utils.cc(319)] [.RendererMainThread-0x13a80345f800]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+[2784410:2784410:0108/193647.245581:ERROR:gl_utils.cc(319)] [.RendererMainThread-0x13a80345f800]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+
+z@m900:~$ 
+z@m900:~$ [2784410:2784410:0108/235503.673837:ERROR:gl_utils.cc(319)] [.RendererMainThread-0x13a804db2200]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+[2784410:2784410:0108/235503.678547:ERROR:gl_utils.cc(319)] [.RendererMainThread-0x13a804db2200]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels (this message will no longer repeat)
+[2784360:2784360:0108/235637.889717:ERROR:interface_endpoint_client.cc(694)] Message 1 rejected by interface blink.mojom.WidgetHost
+[2784360:2784360:0108/235637.889847:ERROR:interface_endpoint_client.cc(694)] Message 1 rejected by interface blink.mojom.WidgetHost
+
+z@m900:~$ 
+z@m900:~$ 
+z@m900:~$ [2784360:2784360:0109/052730.235806:ERROR:interface_endpoint_client.cc(694)] Message 1 rejected by interface blink.mojom.WidgetHost
+[2784360:2784360:0109/052924.503612:ERROR:interface_endpoint_client.cc(694)] Message 1 rejected by interface blink.mojom.WidgetHost
 ```
+![Screenshot_2023-01-09_06-05-18](https://user-images.githubusercontent.com/120763310/211326691-55abd9bc-65de-4341-b42d-99617f79a60c.png)
 ![Screenshot_2022-12-17_16-15-50](https://user-images.githubusercontent.com/120763310/208271097-bbf981fb-0b3b-4db7-838d-ebebbc63adfa.png)
 ![Screenshot_2022-12-17_08-02-55](https://user-images.githubusercontent.com/120763310/208250812-35026e0b-325b-40c1-8a1a-02757bf6e682.png)
 # chromeOSlinux_test
