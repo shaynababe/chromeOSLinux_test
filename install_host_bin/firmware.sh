@@ -139,9 +139,9 @@ fi
 
 #flash updated legacy BIOS
 echo_yellow "Installing RW_LEGACY firmware"
-${flashromcmd} -w -i RW_LEGACY:${rwlegacy_file} -o /tmp/flashrom.log > /dev/null 2>&1
+${flashromcmd} -w -i RW_LEGACY:${rwlegacy_file} -o //usr/local/bin/flashrom.log > /dev/null 2>&1
 if [ $? -ne 0 ]; then
-    cat /tmp/flashrom.log
+    cat /usr/local/bin/flashrom.log
     echo_red "An error occurred flashing the RW_LEGACY firmware."
 else
   echo_green "RW_LEGACY firmware successfully installed/updated."
