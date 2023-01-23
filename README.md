@@ -4,7 +4,12 @@
 ### SystemD is running on winky Debian bullseye duel boot chromeOS audio works non-free firmware-intel-sound installed outstanding audio
 ![Screenshot_2023-01-11_16-37-43](https://user-images.githubusercontent.com/120763310/211948727-101c161a-1c4a-45b4-8d22-aa4174267fdc.png)
 
+
 ```bash
+test5 -V     
+test5: version 1-20230122162027~main:9c32f56c
+chronos@localhost /usr/local/bin $ 
+
 0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
 Please specify a username for the primary user: z
 Enter new UNIX password: 
