@@ -79,7 +79,7 @@ flashrom is complete now building kernals for audio and video RT prenup
 
 ## The Kernel Process is doing well  this takes some time Chroot does not use Grub however initramFS and new kernel can be loaded, chroot no boot no init or systemd no wonder the lastest Xorg server fails Bookworm Kali jammy 
 
-jammmy install just fine under chroot snapd does not run so a webbrowser cannot be installed
+jammy install just fine under chroot snapd does not run so a web browser cannot be installed xorg fails only xiwi works
 
 ![Screenshot_2023-01-31_18-49-19](https://user-images.githubusercontent.com/120763310/215934713-e8817be6-9395-47a5-8641-b3d2cd23a102.png)
 
