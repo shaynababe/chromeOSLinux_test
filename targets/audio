@@ -2,6 +2,10 @@
 # Copyright (c) Mon Jan 23 10:52:34 PST 2023 The chromeOSLinux Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
+#!/bin/sh -e
+# Copyright (c) 2016 The crouton Authors. All rights reserved.
+# Use of this source code is governed by a BSD-style license that can be
+# found in the LICENSE file.
 REQUIRES='core'
 DESCRIPTION="Support audio playback via Chromium OS's audio system."
 CHROOTBIN='volume'
@@ -12,7 +16,7 @@ CHROOTETC='pulseaudio-default.pa'
 
 # Fetch CRAS source
 
-CRASBUILDTMP="`mktemp -d chromeOSLinux-cras.XXXXXX --tmpdir=/usr/local/bin`"
+CRASBUILDTMP="`mktemp -d crouton-cras.XXXXXX --tmpdir=/tmp`"
 
 addtrap "rm -rf --one-file-system '$CRASBUILDTMP'"
 
@@ -56,6 +60,14 @@ if tail -n 1 "$log" | grep -q "^Error"; then
         exit 1
     fi
 fi
+
+# ChromiumOS >= 15378.0.0 removed autotools support (https://crrev.com/c/4322563),
+# fetch the last known good Makefile.am. We can still patch it as required.
+lastgoodam="c2ece09f69565afcbcf511b1693f3fe735bde511/cras/src/Makefile.am"
+mkdir -p "$CRASBUILDTMP/cras/src"
+wget "https://chromium.googlesource.com/chromiumos/third_party/adhd/+/${lastgoodam}?format=TEXT" -O- \
+    | base64 -d > "$CRASBUILDTMP/Makefile.am"
+
 
 # Build CRAS ALSA plugin for the given architecture ($1)
 # A blank parameter means we are building for the native architecture.
@@ -112,15 +124,24 @@ build_cras() {
         cd "$CRASBUILDTMP"
 
         # Make sure we start fresh
-        rm -rf --one-file-system cras
+        rm -rf --one-file-system cras include
+
+        # Copy over prefetched Makefile.am, it'll get overriden if already present.
+        mkdir -p cras/src
+        cp Makefile.am cras/src/Makefile.am
 
         # -m prevents "time stamp is in the future" spam
         tar -xmf adhd.tar.gz cras/src
 
+        # If include/ exists, extract the content and move it to cras/src/common
+        if tar -xmf adhd.tar.gz include; then
+          mv include/*.h cras/src/common
+        fi
+
         cd cras/src
 
         # Create version file
-        echo '#define VCSID "chromeOSLinux-'"$ADHD_HEAD"'"' > common/cras_version.h
+        echo '#define VCSID "crouton-'"$ADHD_HEAD"'"' > common/cras_version.h
 
         install --minimal --asdeps patch
 
@@ -141,41 +162,17 @@ void cras_sbc_codec_destroy(struct cras_audio_codec *codec) {
 }
 END
 
-        # Find the cras test client
-        cras_test_client='tools/cras_test_client/cras_test_client.c'
-        # FIXME: remove when 12334.0.0 (R77) becomes minimum target
-        if [ ! -f "$cras_test_client" ]; then
-            cras_test_client='tests/cras_test_client.c'
-        fi
-
-        # Drop SBC constants
-        sed -e 's/SBC_[A-Z0-9_]*/0/g' -i "$cras_test_client"
-
-	# FIXME(crbug.com/864815) Remove when fixed upstream
-	if [ "$cras_arch" = "i386" ]; then
-	    sed -i -e 's/Dumping AEC info to %s, stream %lu/Dumping AEC info to %s, stream %llu/' \
-		"$cras_test_client"
-	fi
-	sed -i -e 's/cras_stream_id_t stream_id;/cras_stream_id_t stream_id = 0;/' \
-	    "$cras_test_client"
-
-	# FIXME(http://crrev.com/c/1759370): Remove when R78 becomes minimum target
-	sed -i -e 's/\(strncpy.*sizeof(info.name)\));/\1 - 1); info.name[sizeof(info.name) - 1] = '"'"'\\0'"'"';/' \
-		common/cras_shm.c
-	sed -i -e 's/^struct \([^_]\)/struct __attribute__((__packed__)) \1/' \
-		common/cras_messages.h
-
         # Directory to install CRAS library/binaries
         CRASLIBDIR="/usr/local$archextrapath/lib"
         CRASBINDIR="/usr/local$archextrapath/bin"
 
         echo "Compiling CRAS (${cras_arch:-native})..." 1>&2
         # Convert Makefile.am to a shell script, and run it.
-        {
+        {   echo "automake"
             convert_automake
-
+            echo "automake"
             echo '
-                CFLAGS="$CFLAGS -DCRAS_SOCKET_FILE_DIR=\"/var/run/cras\" -Wno-error"
+                CFLAGS="$CFLAGS -DCRAS_SOCKET_FILE_DIR=\"/var/run/cras\" "
 
                 buildlib libcras
 
@@ -250,7 +247,7 @@ EOF
 # Configure pulseaudio even if it is not installed (yet).
 # We use ~/.config/pulse/default.pa for this purpose, but the main user may
 # not have been created yet, so we add a script in /etc/profile.d to link
-# ~/.config/pulse/default.pa to /etc/chromeOSLinux/pulseaudio-default.pa.
+# ~/.config/pulse/default.pa to /etc/crouton/pulseaudio-default.pa.
 
 paconfigdir='$HOME/.config/pulse'
 # Old versions of pulseaudio use ~/.pulse/default.pa
@@ -258,7 +255,7 @@ if release -le quantal -le wheezy; then
     paconfigdir='$HOME/.pulse'
 fi
 
-profiledsh='/etc/profile.d/chromeOSLinux-pulseaudio-cras.sh'
+profiledsh='/etc/profile.d/crouton-pulseaudio-cras.sh'
 # Make sure symbolic link is setup on login
 echo '#!/bin/sh
 
@@ -266,7 +263,7 @@ defaultpa="'"$paconfigdir"'/default.pa"
 # Do not install if user is root, or $HOME does not exist
 if [ "`id -u`" -ne 0 -a -d "$HOME" -a ! -e "$defaultpa" ]; then
     mkdir -p "'"$paconfigdir"'"
-    ln -sfT /etc/chromeOSLinux/pulseaudio-default.pa "$defaultpa"
+    ln -sfT /etc/crouton/pulseaudio-default.pa "$defaultpa"
 fi' > "$profiledsh"
 
 chmod 755 "$profiledsh"
